@@ -68,8 +68,7 @@ export default function TeamPage() {
               <Image
                 src={member.image}
                 alt={member.name}
-                width={420}
-                height={420}
+                fill
                 priority
                 className="team-member-image"
               />
