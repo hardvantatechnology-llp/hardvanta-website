@@ -1,0 +1,543 @@
+@import "./navbar.css";
+@import "./hero.css";
+@import "./footer.css";
+@import "./services.css";
+@import "./industries.css";
+@import "./team.css";
+@import "./animations.css";
+@import "./about.css";
+@import "./contact.css";
+@import "./research.css";
+@import "./blog.css";
+
+/* ===================================
+   ROOT
+=================================== */
+
+:root {
+
+    --primary: #0F2D5C;
+    --secondary: #2F6DB2;
+
+    --background: #F8FAFC;
+    --white: #FFFFFF;
+
+    --text-dark: #0A1628;
+    --text-light: #5B6575;
+
+    --border: #E2E8F0;
+
+    --shadow-light:
+        0 10px 30px rgba(15, 45, 92, 0.06);
+
+    --shadow-medium:
+        0 20px 50px rgba(15, 45, 92, 0.10);
+
+    --gradient-primary:
+        linear-gradient(135deg,
+            #0F2D5C,
+            #2F6DB2);
+
+    --radius-xl: 32px;
+    --radius-lg: 24px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+
+    --transition:
+        all 0.3s ease;
+}
+
+/* ===================================
+   RESET
+=================================== */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        #2F6DB2 #EDF2F7;
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+    scroll-padding-top: 90px;
+
+    font-size: 16px;
+}
+
+body {
+
+    background:
+        var(--background);
+
+    color:
+        var(--text-dark);
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    overflow-x: hidden;
+
+    text-rendering:
+        optimizeLegibility;
+
+    -webkit-font-smoothing:
+        antialiased;
+}
+
+/* ===================================
+   COMMON
+=================================== */
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+    transition:
+        var(--transition);
+
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+button {
+
+    border: none;
+
+    outline: none;
+
+    background: none;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+input,
+textarea,
+select {
+
+    font-family: inherit;
+
+    outline: none;
+}
+
+ul {
+
+    list-style: none;
+}
+
+img {
+
+    max-width: 100%;
+
+    height: auto;
+
+    display: block;
+}
+
+/* ===================================
+   CONTAINER
+=================================== */
+
+.container {
+
+    width: 100%;
+
+    max-width: 1320px;
+
+    margin: auto;
+}
+
+/* ===================================
+   SECTIONS
+=================================== */
+
+section {
+
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        100px 7%;
+}
+
+/* ===================================
+   TYPOGRAPHY
+=================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    line-height: 1.08;
+
+    font-weight: 800;
+
+    letter-spacing: -0.03em;
+
+    word-break: break-word;
+}
+
+p {
+
+    line-height: 1.8;
+
+    word-break: break-word;
+}
+
+/* ===================================
+   TAG
+=================================== */
+
+.section-tag {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        10px 22px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(47, 109, 178, 0.08);
+
+    color:
+        var(--secondary);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 22px;
+}
+
+/* ===================================
+   TITLES
+=================================== */
+
+.section-title {
+
+    font-size:
+        clamp(2.4rem, 5vw, 4.5rem);
+
+    color:
+        var(--primary);
+
+    line-height: 1.08;
+
+    margin-bottom: 22px;
+}
+
+.section-title span {
+
+    color:
+        var(--secondary);
+}
+
+/* ===================================
+   DESCRIPTION
+=================================== */
+
+.section-description {
+
+    max-width: 760px;
+
+    margin: auto;
+
+    color:
+        var(--text-light);
+
+    font-size:
+        clamp(0.95rem, 1.5vw, 1.1rem);
+
+    line-height: 1.9;
+}
+
+/* ===================================
+   GLASS CARD
+=================================== */
+
+.glass-card {
+
+    background:
+        rgba(255, 255, 255, 0.82);
+
+    backdrop-filter:
+        blur(18px);
+
+    border:
+        1px solid rgba(226, 232, 240, 0.9);
+
+    border-radius:
+        var(--radius-lg);
+
+    box-shadow:
+        var(--shadow-light);
+
+    transition:
+        var(--transition);
+}
+
+.glass-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        var(--shadow-medium);
+}
+
+/* ===================================
+   BUTTONS
+=================================== */
+
+.primary-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding:
+        15px 28px;
+
+    border-radius:
+        14px;
+
+    background:
+        var(--gradient-primary);
+
+    color:
+        white;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        var(--transition);
+
+    box-shadow:
+        0 14px 30px rgba(47, 109, 178, 0.20);
+}
+
+.primary-btn:hover {
+
+    transform:
+        translateY(-3px);
+}
+
+.secondary-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        15px 28px;
+
+    border-radius:
+        14px;
+
+    background:
+        white;
+
+    border:
+        1px solid var(--border);
+
+    color:
+        var(--primary);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        var(--transition);
+}
+
+.secondary-btn:hover {
+
+    border-color:
+        var(--secondary);
+
+    color:
+        var(--secondary);
+}
+
+/* ===================================
+   SCROLLBAR
+=================================== */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+
+    background:
+        #EDF2F7;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(180deg,
+            #0F2D5C,
+            #2F6DB2);
+
+    border-radius:
+        999px;
+}
+
+/* ===================================
+   SELECTION
+=================================== */
+
+::selection {
+
+    background:
+        rgba(47, 109, 178, 0.18);
+
+    color:
+        var(--primary);
+}
+
+/* ===================================
+   LARGE LAPTOP
+=================================== */
+
+@media (max-width: 1400px) {
+
+    section {
+
+        padding:
+            90px 6%;
+    }
+}
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media (max-width: 1024px) {
+
+    html {
+
+        font-size: 15px;
+    }
+
+    section {
+
+        padding:
+            85px 6%;
+    }
+
+    .container {
+
+        max-width: 100%;
+    }
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width: 768px) {
+
+    html {
+
+        font-size: 14px;
+    }
+
+    body {
+
+        overflow-x: hidden;
+    }
+
+    section {
+
+        padding:
+            75px 5%;
+    }
+
+    .section-tag {
+
+        font-size: 10px;
+
+        letter-spacing: 2px;
+
+        padding:
+            9px 18px;
+    }
+
+    .section-title {
+
+        line-height: 1.14;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+
+        width: 100%;
+    }
+}
+
+/* ===================================
+   SMALL MOBILE
+=================================== */
+
+@media (max-width: 480px) {
+
+    html {
+
+        font-size: 13px;
+    }
+
+    section {
+
+        padding:
+            65px 5%;
+    }
+
+    .section-title {
+
+        font-size:
+            clamp(2rem, 8vw, 2.5rem);
+    }
+
+    .section-description {
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+}

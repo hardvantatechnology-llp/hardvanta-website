@@ -1,0 +1,314 @@
+/* ===================================
+   INDUSTRIES PAGE
+=================================== */
+
+.industries-page {
+
+    background:
+        #F8FAFC;
+
+    overflow: hidden;
+}
+
+/* ===================================
+   HERO SECTION
+=================================== */
+
+.industries-hero {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        110px 5% 40px;
+
+    background:
+        linear-gradient(to bottom,
+            rgba(37, 99, 235, 0.04),
+            transparent),
+        #F8FAFC;
+}
+
+.industries-content {
+
+    width: 100%;
+
+    max-width: 720px;
+
+    margin: auto;
+}
+
+/* ===================================
+   TAG
+=================================== */
+
+.section-tag {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        7px 16px;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(37, 99, 235, 0.08);
+
+    color:
+        #2563EB;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+/* ===================================
+   TITLE
+=================================== */
+
+.industries-content h1 {
+
+    font-size:
+        clamp(2rem, 4vw, 3.3rem);
+
+    line-height: 1.08;
+
+    font-weight: 800;
+
+    color:
+        #0F172A;
+
+    margin-bottom: 18px;
+}
+
+.industries-content h1 span {
+
+    color:
+        #16356B;
+}
+
+/* ===================================
+   DESCRIPTION
+=================================== */
+
+.industries-content p {
+
+    max-width: 620px;
+
+    margin: auto;
+
+    color:
+        #64748B;
+
+    font-size:
+        clamp(0.85rem, 1vw, 1rem);
+
+    line-height: 1.8;
+}
+
+/* ===================================
+   GRID SECTION
+=================================== */
+
+.industries-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 22px;
+
+    padding:
+        40px 5% 80px;
+}
+
+/* ===================================
+   CARD
+=================================== */
+
+.industry-card {
+
+    position: relative;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    border:
+        1px solid rgba(226, 232, 240, 0.9);
+
+    border-radius:
+        24px;
+
+    padding:
+        24px 20px;
+
+    overflow: hidden;
+
+    transition:
+        all 0.3s ease;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.04);
+}
+
+/* HOVER */
+
+.industry-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 18px 40px rgba(37, 99, 235, 0.08);
+
+    border-color:
+        rgba(37, 99, 235, 0.14);
+}
+
+/* ===================================
+   NUMBER
+=================================== */
+
+.industry-number {
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius:
+        12px;
+
+    background:
+        linear-gradient(135deg,
+            #16356B,
+            #2563EB);
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        0 10px 20px rgba(37, 99, 235, 0.16);
+}
+
+/* ===================================
+   TITLE
+=================================== */
+
+.industry-card h3 {
+
+    color:
+        #0F172A;
+
+    font-size:
+        clamp(1rem, 1.4vw, 1.3rem);
+
+    line-height: 1.4;
+
+    font-weight: 800;
+
+    margin-bottom: 12px;
+}
+
+/* ===================================
+   TEXT
+=================================== */
+
+.industry-card p {
+
+    color:
+        #64748B;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media (max-width: 1024px) {
+
+    .industries-grid {
+
+        grid-template-columns:
+            repeat(auto-fit, minmax(240px, 1fr));
+    }
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width: 768px) {
+
+    .industries-hero {
+
+        padding:
+            95px 5% 30px;
+    }
+
+    .industries-grid {
+
+        padding:
+            30px 5% 70px;
+
+        gap: 18px;
+    }
+
+    .industry-card {
+
+        padding:
+            22px 18px;
+    }
+
+    .industry-card p {
+
+        font-size: 11px;
+    }
+}
+
+/* ===================================
+   SMALL MOBILE
+=================================== */
+
+@media (max-width: 480px) {
+
+    .industries-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .industries-content h1 {
+
+        font-size:
+            1.9rem;
+    }
+
+    .industry-card h3 {
+
+        font-size:
+            1rem;
+    }
+}
