@@ -70,6 +70,13 @@ export default function TeamPage() {
                 alt={member.name}
                 fill
                 priority
+                quality={100}
+                sizes="
+                  (max-width: 480px) 100vw,
+                  (max-width: 768px) 50vw,
+                  (max-width: 1200px) 33vw,
+                  25vw
+                "
                 className="team-member-image"
               />
 

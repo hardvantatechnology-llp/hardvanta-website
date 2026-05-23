@@ -5,7 +5,9 @@
 .team-page {
 
     background:
-        #F8FAFC;
+        linear-gradient(to bottom,
+            #F8FAFC 0%,
+            #EEF2FF 100%);
 
     overflow: hidden;
 }
@@ -24,20 +26,16 @@
     text-align: center;
 
     padding:
-        110px 5% 30px;
+        120px 5% 40px;
 
-    background:
-        linear-gradient(to bottom,
-            rgba(37, 99, 235, 0.04),
-            transparent),
-        #F8FAFC;
+    position: relative;
 }
 
 .team-hero-content {
 
     width: 100%;
 
-    max-width: 720px;
+    max-width: 760px;
 
     margin: auto;
 }
@@ -52,7 +50,7 @@
     justify-content: center;
 
     padding:
-        6px 14px;
+        7px 16px;
 
     border-radius:
         999px;
@@ -60,16 +58,22 @@
     background:
         rgba(37, 99, 235, 0.08);
 
+    backdrop-filter:
+        blur(10px);
+
     color:
         #2563EB;
 
-    font-size: 9px;
+    font-size: 10px;
 
-    font-weight: 700;
+    font-weight: 800;
 
     letter-spacing: 2px;
 
-    margin-bottom: 14px;
+    margin-bottom: 18px;
+
+    border:
+        1px solid rgba(37, 99, 235, 0.12);
 }
 
 /* TITLE */
@@ -77,29 +81,38 @@
 .team-hero-content h1 {
 
     font-size:
-        clamp(1.9rem, 4vw, 3.2rem);
+        clamp(2.3rem, 5vw, 4.5rem);
 
-    line-height: 1.05;
+    line-height: 1;
 
     color:
         #0F172A;
 
-    margin-bottom: 14px;
+    margin-bottom: 18px;
 
-    font-weight: 800;
+    font-weight: 900;
+
+    letter-spacing:
+        -2px;
 }
 
 .team-hero-content h1 span {
 
-    color:
-        #16356B;
+    background:
+        linear-gradient(135deg,
+            #2563EB,
+            #16356B);
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
 }
 
 /* DESCRIPTION */
 
 .team-hero-description {
 
-    max-width: 600px;
+    max-width: 650px;
 
     margin: auto;
 
@@ -107,9 +120,9 @@
         #64748B;
 
     font-size:
-        clamp(0.82rem, 1vw, 0.95rem);
+        clamp(0.95rem, 1vw, 1.05rem);
 
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 /* ===================================
@@ -121,14 +134,14 @@
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(280px, 1fr));
+        repeat(auto-fit, minmax(300px, 1fr));
 
-    gap: 24px;
+    gap: 28px;
 
     padding:
-        40px 5% 70px;
+        50px 5% 90px;
 
-    align-items: start;
+    align-items: stretch;
 }
 
 /* ===================================
@@ -138,30 +151,39 @@
 .team-member {
 
     background:
-        rgba(255, 255, 255, 0.95);
+        rgba(255, 255, 255, 0.88);
+
+    backdrop-filter:
+        blur(16px);
 
     border:
-        1px solid rgba(226, 232, 240, 0.9);
+        1px solid rgba(255, 255, 255, 0.5);
 
     border-radius:
-        24px;
+        30px;
 
     overflow: hidden;
 
     transition:
-        all 0.35s ease;
+        all 0.45s ease;
 
     box-shadow:
-        0 10px 30px rgba(15, 23, 42, 0.05);
+        0 10px 40px rgba(15, 23, 42, 0.06);
+
+    display: flex;
+
+    flex-direction: column;
+
+    height: 100%;
 }
 
 .team-member:hover {
 
     transform:
-        translateY(-6px);
+        translateY(-10px);
 
     box-shadow:
-        0 22px 45px rgba(37, 99, 235, 0.10);
+        0 30px 70px rgba(37, 99, 235, 0.16);
 }
 
 /* ===================================
@@ -174,32 +196,36 @@
 
     width: 100%;
 
-    aspect-ratio: 4/5;
+    height: 440px;
 
     overflow: hidden;
 
     background:
-        linear-gradient(to bottom,
-            #F8FAFC,
-            #E2E8F0);
+        linear-gradient(180deg,
+            #F8FAFC 0%,
+            #E2E8F0 100%);
+
+    isolation: isolate;
 }
 
 .team-member-image {
 
-    object-fit: contain;
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
 
     object-position: center top;
 
-    padding: 10px;
-
     transition:
-        transform 0.4s ease;
+        transform 0.5s ease;
 }
 
 .team-member:hover .team-member-image {
 
     transform:
-        scale(1.02);
+        scale(1.05);
 }
 
 .team-image-overlay {
@@ -212,8 +238,11 @@
 
     background:
         linear-gradient(to top,
-            rgba(15, 23, 42, 0.05),
-            transparent 60%);
+            rgba(15, 23, 42, 0.18),
+            rgba(15, 23, 42, 0.03) 45%,
+            transparent 75%);
+
+    z-index: 1;
 }
 
 /* ===================================
@@ -223,7 +252,13 @@
 .team-member-content {
 
     padding:
-        20px 20px 24px;
+        24px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
 }
 
 /* ROLE */
@@ -232,8 +267,13 @@
 
     display: inline-flex;
 
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+
     padding:
-        6px 12px;
+        7px 14px;
 
     border-radius:
         999px;
@@ -244,15 +284,18 @@
     color:
         #2563EB;
 
-    font-size: 9px;
+    font-size: 10px;
 
-    font-weight: 700;
+    font-weight: 800;
 
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 
     text-transform: uppercase;
 
-    margin-bottom: 12px;
+    margin-bottom: 14px;
+
+    border:
+        1px solid rgba(37, 99, 235, 0.10);
 }
 
 /* NAME */
@@ -263,13 +306,16 @@
         #0F172A;
 
     font-size:
-        clamp(1rem, 1.5vw, 1.35rem);
+        clamp(1.4rem, 2vw, 1.7rem);
 
     line-height: 1.2;
 
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 
-    font-weight: 800;
+    font-weight: 900;
+
+    letter-spacing:
+        -0.5px;
 }
 
 /* DESCRIPTION */
@@ -279,9 +325,9 @@
     color:
         #64748B;
 
-    font-size: 12px;
+    font-size: 14px;
 
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 /* ===================================
@@ -293,7 +339,12 @@
     .team-main-grid {
 
         grid-template-columns:
-            repeat(auto-fit, minmax(240px, 1fr));
+            repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .team-image-wrapper {
+
+        height: 390px;
     }
 }
 
@@ -306,20 +357,25 @@
     .team-hero {
 
         padding:
-            100px 5% 24px;
+            110px 5% 30px;
     }
 
     .team-main-grid {
 
         padding:
-            34px 5% 60px;
+            40px 5% 70px;
 
-        gap: 18px;
+        gap: 22px;
+    }
+
+    .team-image-wrapper {
+
+        height: 360px;
     }
 
     .team-description {
 
-        font-size: 11px;
+        font-size: 13px;
     }
 }
 
@@ -337,6 +393,17 @@
 
     .team-hero-content h1 {
 
-        font-size: 1.8rem;
+        font-size: 2.2rem;
+    }
+
+    .team-image-wrapper {
+
+        height: 320px;
+    }
+
+    .team-member-content {
+
+        padding:
+            20px;
     }
 }
