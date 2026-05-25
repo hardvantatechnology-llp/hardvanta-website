@@ -1,6 +1,6 @@
-/* ===================================
-   HERO SECTION
-=================================== */
+/* ==========================================
+   HARDVANTA HERO SECTION — FINAL PRO
+========================================== */
 
 .hero-section {
 
@@ -12,60 +12,62 @@
     align-items: center;
 
     padding:
-        115px 6% 70px;
+        105px 6% 65px;
 
     overflow: hidden;
 
     background:
         radial-gradient(circle at top right,
-            rgba(37, 99, 235, 0.08),
-            transparent 32%),
+            rgba(37, 99, 235, 0.06),
+            transparent 30%),
 
         radial-gradient(circle at bottom left,
-            rgba(15, 45, 92, 0.05),
-            transparent 30%),
+            rgba(15, 45, 92, 0.04),
+            transparent 28%),
 
         #F8FAFC;
 }
 
-/* ===================================
+/* ==========================================
    CONTAINER
-=================================== */
+========================================== */
 
 .hero-container {
 
     width: 100%;
 
-    max-width: 1400px;
+    max-width: 1240px;
 
     margin: 0 auto;
 
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.2fr) minmax(420px, 0.8fr);
+        minmax(0, 1fr) minmax(360px, 450px);
 
     align-items: center;
 
-    gap: 90px;
+    gap: 64px;
 }
 
-/* ===================================
+/* ==========================================
    LEFT SIDE
-=================================== */
+========================================== */
 
 .hero-left {
 
     width: 100%;
 
-    max-width: 760px;
+    max-width: 540px;
 
     position: relative;
 
     z-index: 2;
 }
 
-/* TAG */
+/* ==========================================
+   TAG
+========================================== */
 
 .hero-tag {
 
@@ -77,7 +79,7 @@
     padding:
         8px 18px;
 
-    margin-bottom: 22px;
+    margin-bottom: 18px;
 
     border-radius: 999px;
 
@@ -87,39 +89,45 @@
     color:
         #2563EB;
 
-    font-size: 10px;
+    font-size: 9px;
 
     font-weight: 700;
 
-    letter-spacing: 1.6px;
+    letter-spacing: 1.7px;
 
     text-transform: uppercase;
 }
 
-/* TITLE */
+/* ==========================================
+   HERO TITLE
+========================================== */
 
 .hero-left h1 {
 
     width: 100%;
 
-    max-width: 760px;
+    max-width: 500px;
 
     font-size:
-        clamp(3.4rem, 7vw, 6.5rem);
+        clamp(2rem, 4.2vw, 4.7rem);
 
     line-height: 0.92;
 
     font-weight: 800;
 
-    letter-spacing: -5px;
+    letter-spacing: -3px;
 
     color:
         #0F172A;
 
-    margin-bottom: 28px;
+    margin-bottom: 18px;
 
-    word-break: break-word;
+    word-break: normal;
+
+    overflow-wrap: normal;
 }
+
+/* HIGHLIGHT */
 
 .hero-left h1 span {
 
@@ -127,25 +135,27 @@
         #16356B;
 }
 
-/* DESCRIPTION */
+/* ==========================================
+   DESCRIPTION
+========================================== */
 
 .hero-description {
 
-    max-width: 700px;
+    max-width: 520px;
 
     color:
         #64748B;
 
-    font-size: 1.04rem;
+    font-size: 0.95rem;
 
-    line-height: 1.95;
+    line-height: 1.85;
 
-    margin-bottom: 42px;
+    margin-bottom: 34px;
 }
 
-/* ===================================
+/* ==========================================
    BUTTONS
-=================================== */
+========================================== */
 
 .hero-buttons {
 
@@ -157,7 +167,7 @@
 
     gap: 14px;
 
-    margin-bottom: 42px;
+    margin-bottom: 34px;
 }
 
 .hero-primary-btn,
@@ -168,16 +178,16 @@
     align-items: center;
     justify-content: center;
 
-    min-width: 200px;
+    min-width: 180px;
 
     padding:
-        15px 28px;
+        14px 24px;
 
-    border-radius: 16px;
+    border-radius: 14px;
 
     text-decoration: none;
 
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 700;
 
@@ -185,7 +195,7 @@
         all 0.3s ease;
 }
 
-/* PRIMARY */
+/* PRIMARY BUTTON */
 
 .hero-primary-btn {
 
@@ -197,7 +207,7 @@
     color: white;
 
     box-shadow:
-        0 16px 34px rgba(37, 99, 235, 0.18);
+        0 14px 30px rgba(37, 99, 235, 0.16);
 }
 
 .hero-primary-btn:hover {
@@ -206,10 +216,10 @@
         translateY(-3px);
 
     box-shadow:
-        0 22px 42px rgba(37, 99, 235, 0.25);
+        0 20px 40px rgba(37, 99, 235, 0.22);
 }
 
-/* SECONDARY */
+/* SECONDARY BUTTON */
 
 .hero-secondary-btn {
 
@@ -221,7 +231,7 @@
         1px solid rgba(226, 232, 240, 0.9);
 
     box-shadow:
-        0 8px 22px rgba(15, 23, 42, 0.04);
+        0 6px 18px rgba(15, 23, 42, 0.04);
 }
 
 .hero-secondary-btn:hover {
@@ -236,9 +246,9 @@
         #2563EB;
 }
 
-/* ===================================
+/* ==========================================
    STATS
-=================================== */
+========================================== */
 
 .hero-stats {
 
@@ -247,15 +257,15 @@
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 18px;
+    gap: 16px;
 }
 
 .hero-stat {
 
     padding:
-        22px;
+        18px;
 
-    border-radius: 20px;
+    border-radius: 18px;
 
     background:
         rgba(255, 255, 255, 0.92);
@@ -264,7 +274,7 @@
         1px solid rgba(226, 232, 240, 0.7);
 
     box-shadow:
-        0 10px 28px rgba(15, 23, 42, 0.04);
+        0 8px 24px rgba(15, 23, 42, 0.04);
 
     transition:
         all 0.3s ease;
@@ -276,7 +286,7 @@
         translateY(-3px);
 
     box-shadow:
-        0 18px 34px rgba(37, 99, 235, 0.08);
+        0 14px 30px rgba(37, 99, 235, 0.08);
 }
 
 .hero-stat h3 {
@@ -284,11 +294,11 @@
     color:
         #16356B;
 
-    font-size: 20px;
+    font-size: 18px;
 
     font-weight: 800;
 
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .hero-stat p {
@@ -296,14 +306,14 @@
     color:
         #64748B;
 
-    font-size: 12px;
+    font-size: 11px;
 
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
-/* ===================================
+/* ==========================================
    RIGHT SIDE
-=================================== */
+========================================== */
 
 .hero-right {
 
@@ -311,26 +321,28 @@
 
     display: flex;
 
-    justify-content: flex-end;
+    justify-content: center;
 
     align-items: center;
 }
 
-/* CARD */
+/* ==========================================
+   HERO CARD
+========================================== */
 
 .hero-card {
 
     width: 100%;
 
-    max-width: 500px;
+    max-width: 440px;
 
     padding:
-        40px;
+        32px;
 
-    border-radius: 34px;
+    border-radius: 28px;
 
     background:
-        rgba(255, 255, 255, 0.92);
+        rgba(255, 255, 255, 0.94);
 
     backdrop-filter:
         blur(18px);
@@ -339,7 +351,7 @@
         1px solid rgba(226, 232, 240, 0.8);
 
     box-shadow:
-        0 28px 70px rgba(15, 23, 42, 0.08);
+        0 22px 55px rgba(15, 23, 42, 0.06);
 }
 
 /* BADGE */
@@ -351,9 +363,9 @@
     align-items: center;
 
     padding:
-        8px 16px;
+        7px 14px;
 
-    margin-bottom: 22px;
+    margin-bottom: 18px;
 
     border-radius: 999px;
 
@@ -363,11 +375,11 @@
     color:
         #2563EB;
 
-    font-size: 10px;
+    font-size: 9px;
 
     font-weight: 700;
 
-    letter-spacing: 1.3px;
+    letter-spacing: 1.2px;
 }
 
 /* CARD TITLE */
@@ -378,13 +390,13 @@
         #0F172A;
 
     font-size:
-        clamp(1.7rem, 2vw, 2.2rem);
+        clamp(1.5rem, 2vw, 1.95rem);
 
-    line-height: 1.25;
+    line-height: 1.22;
 
     font-weight: 800;
 
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
 /* CARD TEXT */
@@ -394,14 +406,16 @@
     color:
         #64748B;
 
-    font-size: 13px;
+    font-size: 12px;
 
-    line-height: 1.9;
+    line-height: 1.8;
 
-    margin-bottom: 26px;
+    margin-bottom: 22px;
 }
 
-/* GRID */
+/* ==========================================
+   GRID
+========================================== */
 
 .hero-card-grid {
 
@@ -410,7 +424,7 @@
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 12px;
+    gap: 10px;
 }
 
 .hero-card-grid div {
@@ -423,9 +437,9 @@
     text-align: center;
 
     padding:
-        14px 12px;
+        13px 10px;
 
-    border-radius: 14px;
+    border-radius: 12px;
 
     background:
         rgba(248, 250, 252, 0.9);
@@ -436,7 +450,7 @@
     color:
         #16356B;
 
-    font-size: 12px;
+    font-size: 11px;
 
     font-weight: 600;
 
@@ -453,9 +467,9 @@
         rgba(37, 99, 235, 0.08);
 }
 
-/* ===================================
+/* ==========================================
    TABLET
-=================================== */
+========================================== */
 
 @media (max-width: 1024px) {
 
@@ -463,7 +477,7 @@
 
         grid-template-columns: 1fr;
 
-        gap: 60px;
+        gap: 50px;
     }
 
     .hero-left {
@@ -476,23 +490,22 @@
         max-width: 100%;
 
         font-size:
-            clamp(3rem, 8vw, 5rem);
+            clamp(2.2rem, 6vw, 4rem);
+
+        line-height: 0.96;
+
+        letter-spacing: -2px;
     }
 
     .hero-description {
 
         max-width: 100%;
     }
-
-    .hero-right {
-
-        justify-content: center;
-    }
 }
 
-/* ===================================
+/* ==========================================
    MOBILE
-=================================== */
+========================================== */
 
 @media (max-width: 768px) {
 
@@ -501,26 +514,29 @@
         min-height: auto;
 
         padding:
-            105px 6% 60px;
+            90px 6% 48px;
     }
 
     .hero-container {
 
-        gap: 52px;
+        gap: 40px;
     }
 
     .hero-left h1 {
 
-        font-size: 3rem;
+        font-size:
+            clamp(1.9rem, 8vw, 2.8rem);
 
         line-height: 1;
 
-        letter-spacing: -2px;
+        letter-spacing: -1.4px;
     }
 
     .hero-description {
 
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+
+        line-height: 1.7;
     }
 
     .hero-buttons {
@@ -546,7 +562,7 @@
         max-width: 100%;
 
         padding:
-            30px;
+            26px;
     }
 
     .hero-card-grid {
@@ -555,49 +571,42 @@
     }
 }
 
-/* ===================================
+/* ==========================================
    SMALL MOBILE
-=================================== */
+========================================== */
 
 @media (max-width: 480px) {
 
     .hero-section {
 
         padding:
-            95px 5% 45px;
+            84px 5% 40px;
     }
 
     .hero-left h1 {
 
-        font-size: 2.35rem;
+        font-size: 2rem;
 
-        line-height: 1.04;
+        line-height: 1.02;
 
-        letter-spacing: -1.5px;
-    }
-
-    .hero-tag {
-
-        font-size: 8px;
-
-        letter-spacing: 1px;
+        letter-spacing: -1px;
     }
 
     .hero-description {
 
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .hero-card {
 
         padding:
-            24px;
+            22px;
 
-        border-radius: 24px;
+        border-radius: 22px;
     }
 
     .hero-card h2 {
 
-        font-size: 1.45rem;
+        font-size: 1.3rem;
     }
 }

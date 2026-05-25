@@ -1,27 +1,31 @@
 import Image from "next/image";
+
 import Link from "next/link";
 
-import { Mail, MapPin, Globe, ArrowRight } from "lucide-react";
+import { Mail, MapPin, Globe, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="footer">
-      {/* BACKGROUND BLUR */}
+      {/* BACKGROUND GLOW */}
 
       <div className="footer-blur footer-blur-one"></div>
 
       <div className="footer-blur footer-blur-two"></div>
 
+      {/* MAIN */}
+
       <div className="footer-container">
         {/* BRAND */}
 
         <div className="footer-brand">
-          <div className="footer-logo-wrap">
+          <Link href="/" className="footer-logo-wrap">
             <Image
               src="/logo/logo.jpeg"
               alt="Hardvanta Technologies LLP"
-              width={60}
-              height={60}
+              width={58}
+              height={58}
+              priority
               className="footer-logo"
             />
 
@@ -30,13 +34,12 @@ export default function Footer() {
 
               <span>TECHNOLOGIES LLP</span>
             </div>
-          </div>
+          </Link>
 
           <p className="footer-description">
-            Hardvanta Technologies LLP is a research-driven engineering company
-            focused on Embedded Systems, IoT Development, Artificial
-            Intelligence, PCB Design, Firmware Engineering, and Industrial
-            Automation solutions.
+            We help businesses build intelligent engineering systems through
+            Embedded Technologies, IoT Solutions, Artificial Intelligence,
+            Firmware Engineering, and Industrial Automation.
           </p>
 
           {/* SOCIAL */}
@@ -52,27 +55,47 @@ export default function Footer() {
 
               <span>LinkedIn</span>
 
-              <ArrowRight size={15} />
+              <ArrowUpRight size={15} />
             </a>
           </div>
         </div>
 
-        {/* QUICK LINKS */}
+        {/* SERVICES */}
 
         <div className="footer-links">
-          <h4>Quick Links</h4>
+          <h4>Services</h4>
 
           <ul>
             <li>
-              <Link href="/">Home</Link>
+              <Link href="/services">Embedded Systems</Link>
             </li>
 
             <li>
-              <Link href="/about">About</Link>
+              <Link href="/services">IoT Development</Link>
             </li>
 
             <li>
-              <Link href="/services">Services</Link>
+              <Link href="/services">PCB Design</Link>
+            </li>
+
+            <li>
+              <Link href="/services">AI Solutions</Link>
+            </li>
+
+            <li>
+              <Link href="/services">Industrial Automation</Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* COMPANY */}
+
+        <div className="footer-links">
+          <h4>Company</h4>
+
+          <ul>
+            <li>
+              <Link href="/about">About Us</Link>
             </li>
 
             <li>
@@ -84,7 +107,11 @@ export default function Footer() {
             </li>
 
             <li>
-              <Link href="/team">Team</Link>
+              <Link href="/team">Leadership</Link>
+            </li>
+
+            <li>
+              <Link href="/blog">Blog</Link>
             </li>
 
             <li>
@@ -101,13 +128,7 @@ export default function Footer() {
           <div className="footer-contact-item">
             <MapPin size={18} />
 
-            <p>
-              Knowledge Park 3,
-              <br />
-              Greater Noida,
-              <br />
-              Uttar Pradesh, India
-            </p>
+            <p>Greater Noida, Uttar Pradesh, India</p>
           </div>
 
           <div className="footer-contact-item">

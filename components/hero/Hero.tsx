@@ -4,16 +4,16 @@ export default function Hero() {
   return (
     <section className="hero-section" id="home">
       <div className="hero-container">
-        {/* =========================
+        {/* ===================================
             LEFT CONTENT
-        ========================= */}
+        =================================== */}
 
         <div className="hero-left">
           <p className="hero-tag">INNOVATE ◆ ENGINEER ◆ EMPOWER</p>
 
           <h1>
             Engineering
-            <span> Intelligent Systems</span>
+            <span> Intelligent Systems </span>
             For Modern Industries
           </h1>
 
@@ -21,7 +21,8 @@ export default function Hero() {
             Hardvanta Technologies LLP is a research-driven engineering company
             focused on Embedded Systems, IoT Development, Artificial
             Intelligence, PCB Design, Firmware Engineering, and Industrial
-            Automation solutions for modern businesses.
+            Automation solutions for modern industries and future-ready
+            businesses.
           </p>
 
           {/* BUTTONS */}
@@ -59,9 +60,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* =========================
+        {/* ===================================
             RIGHT CONTENT
-        ========================= */}
+        =================================== */}
 
         <div className="hero-right">
           <div className="hero-card">
@@ -70,8 +71,9 @@ export default function Hero() {
             <h2>Building Intelligent Engineering Systems For The Future</h2>
 
             <p>
-              Delivering scalable engineering, automation, embedded systems, AI
-              technologies, and intelligent industrial solutions.
+              Delivering scalable engineering, embedded systems, automation, AI
+              technologies, and intelligent industrial solutions for modern
+              enterprises.
             </p>
 
             <div className="hero-card-grid">

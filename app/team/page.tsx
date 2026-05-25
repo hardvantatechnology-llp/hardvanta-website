@@ -1,39 +1,6 @@
 import Image from "next/image";
 
-const teamMembers = [
-  {
-    name: "Priya Saini",
-
-    role: "Founder",
-
-    image: "/team/priya_saini.jpeg",
-
-    description:
-      "Leading Hardvanta Technologies LLP with a strong vision focused on innovation, intelligent systems, and future-ready engineering solutions.",
-  },
-
-  {
-    name: "Abhishek Patel",
-
-    role: "Co-Founder",
-
-    image: "/team/abhishek_patel.jpeg",
-
-    description:
-      "Driving engineering excellence, scalable product development, and advanced technology research across multiple domains.",
-  },
-
-  {
-    name: "Salman Ansari",
-
-    role: "Chief Executive Officer",
-
-    image: "/team/salman-ansari.jpeg",
-
-    description:
-      "Focused on strategic growth, operational leadership, industrial innovation, and intelligent business transformation.",
-  },
-];
+import { teamMembers } from "@/data/team";
 
 export default function TeamPage() {
   return (
@@ -61,7 +28,7 @@ export default function TeamPage() {
 
       <section className="team-main-grid">
         {teamMembers.map((member, index) => (
-          <div key={index} className="team-member">
+          <article key={index} className="team-member">
             {/* IMAGE */}
 
             <div className="team-image-wrapper">
@@ -92,7 +59,7 @@ export default function TeamPage() {
 
               <p className="team-description">{member.description}</p>
             </div>
-          </div>
+          </article>
         ))}
       </section>
     </main>

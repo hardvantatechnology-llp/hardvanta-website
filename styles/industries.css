@@ -1,42 +1,57 @@
 /* ===================================
-   INDUSTRIES PAGE
+   ABOUT PAGE
 =================================== */
 
-.industries-page {
+.about-page {
 
-    background:
-        #F8FAFC;
+    width: 100%;
 
     overflow: hidden;
+
+    background:
+        linear-gradient(to bottom,
+            #F8FAFC,
+            #EEF4FF);
 }
 
 /* ===================================
    HERO SECTION
 =================================== */
 
-.industries-hero {
+.about-hero {
+
+    position: relative;
+
+    min-height: 72vh;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
 
     padding:
-        110px 5% 40px;
+        130px 7% 90px;
+
+    overflow: hidden;
 
     background:
-        linear-gradient(to bottom,
-            rgba(37, 99, 235, 0.04),
-            transparent),
+        radial-gradient(circle at top right,
+            rgba(37, 99, 235, 0.08),
+            transparent 35%),
+        radial-gradient(circle at bottom left,
+            rgba(15, 45, 92, 0.05),
+            transparent 30%),
         #F8FAFC;
 }
 
-.industries-content {
+.about-hero-content {
 
     width: 100%;
 
-    max-width: 720px;
+    max-width: 860px;
 
     margin: auto;
 }
@@ -45,15 +60,16 @@
    TAG
 =================================== */
 
-.section-tag {
+.about-tag {
 
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     padding:
-        7px 16px;
+        10px 20px;
 
     border-radius:
         999px;
@@ -64,183 +80,378 @@
     color:
         #2563EB;
 
-    font-size: 10px;
+    font-size:
+        11px;
 
-    font-weight: 700;
+    font-weight:
+        700;
 
-    letter-spacing: 2px;
+    letter-spacing:
+        2px;
 
-    margin-bottom: 18px;
+    text-transform:
+        uppercase;
+
+    margin-bottom:
+        26px;
 }
 
 /* ===================================
    TITLE
 =================================== */
 
-.industries-content h1 {
+.about-hero h1 {
 
     font-size:
-        clamp(2rem, 4vw, 3.3rem);
+        clamp(2.8rem, 6vw, 5.5rem);
 
-    line-height: 1.08;
+    line-height:
+        1.02;
 
-    font-weight: 800;
+    font-weight:
+        800;
+
+    letter-spacing:
+        -2px;
 
     color:
         #0F172A;
 
-    margin-bottom: 18px;
+    margin-bottom:
+        28px;
 }
 
-.industries-content h1 span {
+.about-hero h1 span {
 
     color:
-        #16356B;
+        #2563EB;
 }
 
 /* ===================================
    DESCRIPTION
 =================================== */
 
-.industries-content p {
+.about-description {
 
-    max-width: 620px;
+    max-width:
+        720px;
+
+    margin:
+        auto;
+
+    font-size:
+        17px;
+
+    line-height:
+        1.9;
+
+    color:
+        #64748B;
+}
+
+/* ===================================
+   COMPANY SECTION
+=================================== */
+
+.company-section {
+
+    width: 100%;
+
+    max-width: 1400px;
 
     margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr 0.9fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+    padding:
+        30px 7% 120px;
+}
+
+/* ===================================
+   LEFT SIDE
+=================================== */
+
+.section-small {
+
+    display: inline-block;
+
+    color:
+        #2563EB;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        18px;
+}
+
+.company-left h2 {
+
+    font-size:
+        clamp(2rem, 4vw, 4rem);
+
+    line-height:
+        1.1;
+
+    font-weight:
+        800;
+
+    color:
+        #0F172A;
+
+    margin-bottom:
+        24px;
+}
+
+.company-left h2 span {
+
+    color:
+        #2563EB;
+}
+
+.company-left p {
 
     color:
         #64748B;
 
     font-size:
-        clamp(0.85rem, 1vw, 1rem);
+        16px;
 
-    line-height: 1.8;
+    line-height:
+        1.9;
+
+    margin-bottom:
+        18px;
 }
 
 /* ===================================
-   GRID SECTION
+   FEATURES
 =================================== */
 
-.industries-grid {
+.about-features {
 
-    display: grid;
+    display: flex;
 
-    grid-template-columns:
-        repeat(auto-fit, minmax(260px, 1fr));
+    flex-wrap: wrap;
 
-    gap: 22px;
+    gap: 14px;
+
+    margin:
+        34px 0;
+}
+
+.about-feature {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
 
     padding:
-        40px 5% 80px;
-}
+        14px 18px;
 
-/* ===================================
-   CARD
-=================================== */
-
-.industry-card {
-
-    position: relative;
+    border-radius:
+        16px;
 
     background:
-        rgba(255, 255, 255, 0.92);
+        rgba(255, 255, 255, 0.88);
 
     border:
         1px solid rgba(226, 232, 240, 0.9);
-
-    border-radius:
-        24px;
-
-    padding:
-        24px 20px;
-
-    overflow: hidden;
-
-    transition:
-        all 0.3s ease;
-
-    box-shadow:
-        0 10px 30px rgba(15, 23, 42, 0.04);
-}
-
-/* HOVER */
-
-.industry-card:hover {
-
-    transform:
-        translateY(-5px);
-
-    box-shadow:
-        0 18px 40px rgba(37, 99, 235, 0.08);
-
-    border-color:
-        rgba(37, 99, 235, 0.14);
-}
-
-/* ===================================
-   NUMBER
-=================================== */
-
-.industry-number {
-
-    width: 44px;
-    height: 44px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius:
-        12px;
-
-    background:
-        linear-gradient(135deg,
-            #16356B,
-            #2563EB);
-
-    color: white;
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    margin-bottom: 18px;
-
-    box-shadow:
-        0 10px 20px rgba(37, 99, 235, 0.16);
-}
-
-/* ===================================
-   TITLE
-=================================== */
-
-.industry-card h3 {
 
     color:
         #0F172A;
 
     font-size:
-        clamp(1rem, 1.4vw, 1.3rem);
+        14px;
 
-    line-height: 1.4;
+    font-weight:
+        600;
 
-    font-weight: 800;
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.04);
+}
 
-    margin-bottom: 12px;
+.about-feature svg {
+
+    color:
+        #2563EB;
 }
 
 /* ===================================
-   TEXT
+   STATS
 =================================== */
 
-.industry-card p {
+.about-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top:
+        36px;
+}
+
+.stat-box {
+
+    padding:
+        24px 18px;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(255, 255, 255, 0.9);
+
+    border:
+        1px solid rgba(226, 232, 240, 0.9);
+
+    text-align:
+        center;
+
+    transition:
+        all 0.3s ease;
+
+    box-shadow:
+        0 12px 30px rgba(15, 23, 42, 0.04);
+}
+
+.stat-box:hover {
+
+    transform:
+        translateY(-5px);
+}
+
+.stat-box h3 {
+
+    font-size:
+        24px;
+
+    font-weight:
+        800;
+
+    color:
+        #0F172A;
+
+    margin-bottom:
+        6px;
+}
+
+.stat-box p {
+
+    margin: 0;
+
+    font-size:
+        13px;
 
     color:
         #64748B;
+}
 
-    font-size: 12px;
+/* ===================================
+   RIGHT SIDE
+=================================== */
 
-    line-height: 1.8;
+.about-image-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius:
+        34px;
+
+    background:
+        white;
+
+    padding:
+        16px;
+
+    border:
+        1px solid rgba(226, 232, 240, 0.9);
+
+    box-shadow:
+        0 24px 60px rgba(15, 23, 42, 0.08);
+}
+
+.about-company-image {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius:
+        26px;
+}
+
+/* ===================================
+   OVERLAY
+=================================== */
+
+.about-overlay {
+
+    position: absolute;
+
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+
+    padding:
+        18px 22px;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(15, 23, 42, 0.82);
+
+    backdrop-filter:
+        blur(12px);
+
+    color:
+        white;
+}
+
+.about-overlay h3 {
+
+    font-size:
+        22px;
+
+    font-weight:
+        800;
+
+    margin-bottom:
+        6px;
+}
+
+.about-overlay p {
+
+    color:
+        rgba(255, 255, 255, 0.8);
+
+    font-size:
+        13px;
 }
 
 /* ===================================
@@ -249,10 +460,13 @@
 
 @media (max-width: 1024px) {
 
-    .industries-grid {
+    .company-section {
 
         grid-template-columns:
-            repeat(auto-fit, minmax(240px, 1fr));
+            1fr;
+
+        gap:
+            50px;
     }
 }
 
@@ -262,29 +476,46 @@
 
 @media (max-width: 768px) {
 
-    .industries-hero {
+    .box {
 
-        padding:
-            95px 5% 30px;
+        color: red;
     }
 
-    .industries-grid {
+    .company-section {
 
         padding:
-            30px 5% 70px;
+            10px 6% 90px;
 
-        gap: 18px;
+        grid-template-columns:
+            1fr;
+
+        gap:
+            50px;
     }
 
-    .industry-card {
+    .about-description {
 
-        padding:
-            22px 18px;
+        font-size:
+            15px;
     }
 
-    .industry-card p {
+    .company-left p {
 
-        font-size: 11px;
+        font-size:
+            15px;
+    }
+
+    .about-stats {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .about-overlay {
+
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
     }
 }
 
@@ -294,21 +525,22 @@
 
 @media (max-width: 480px) {
 
-    .industries-grid {
-
-        grid-template-columns:
-            1fr;
-    }
-
-    .industries-content h1 {
+    .about-hero h1 {
 
         font-size:
-            1.9rem;
+            2.3rem;
     }
 
-    .industry-card h3 {
+    .company-left h2 {
 
         font-size:
-            1rem;
+            2rem;
+    }
+
+    .about-feature {
+
+        width: 100%;
+
+        justify-content: center;
     }
 }

@@ -1,43 +1,59 @@
-import Navbar from "../components/navbar/Navbar";
-import Hero from "../components/hero/Hero";
-import Footer from "../components/footer/Footer";
+import Navbar from "@/components/navbar/Navbar";
 
-import AboutPage from "./about/page";
-import ServicesPage from "./services/page";
-import ResearchPage from "./research/page";
+import Hero from "@/components/hero/Hero";
+
+import Footer from "@/components/footer/Footer";
+
+import AboutPage from "@/app/about/page";
+
+import ServicesPage from "@/app/services/page";
+
+import ResearchPage from "@/app/research/page";
 
 export default function Home() {
   return (
     <main className="home-page">
-      {/* NAVBAR */}
+      {/* =========================
+          NAVBAR
+      ========================= */}
 
       <Navbar />
 
-      {/* HERO */}
+      {/* =========================
+          HERO SECTION
+      ========================= */}
 
-      <section id="home">
+      <section id="home" className="home-section hero-home-section">
         <Hero />
       </section>
 
-      {/* ABOUT */}
+      {/* =========================
+          ABOUT SECTION
+      ========================= */}
 
-      <section id="about">
+      <section id="about" className="home-section">
         <AboutPage />
       </section>
 
-      {/* SERVICES */}
+      {/* =========================
+          SERVICES SECTION
+      ========================= */}
 
-      <section id="services">
+      <section id="services" className="home-section">
         <ServicesPage />
       </section>
 
-      {/* RESEARCH */}
+      {/* =========================
+          RESEARCH SECTION
+      ========================= */}
 
-      <section id="research">
+      <section id="research" className="home-section">
         <ResearchPage />
       </section>
 
-      {/* FOOTER */}
+      {/* =========================
+          FOOTER
+      ========================= */}
 
       <Footer />
     </main>

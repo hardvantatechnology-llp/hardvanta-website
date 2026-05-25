@@ -1,48 +1,8 @@
+import Link from "next/link";
+
+import { researchAreas } from "@/data/research";
+
 export default function ResearchPage() {
-  const researchAreas = [
-    {
-      title: "Artificial Intelligence",
-
-      description:
-        "AI-driven intelligent systems, predictive analytics, smart automation, and adaptive technologies for modern industries.",
-    },
-
-    {
-      title: "Industrial IoT",
-
-      description:
-        "Connected industrial ecosystems, sensor networks, smart monitoring, and scalable IoT infrastructure solutions.",
-    },
-
-    {
-      title: "Embedded Innovation",
-
-      description:
-        "Next-generation embedded hardware, firmware engineering, PCB innovation, and real-time intelligent systems.",
-    },
-
-    {
-      title: "Automation Systems",
-
-      description:
-        "Industrial automation platforms, intelligent process control, and smart operational transformation solutions.",
-    },
-
-    {
-      title: "Smart Electronics",
-
-      description:
-        "Research in advanced electronics, intelligent device engineering, and integrated smart hardware systems.",
-    },
-
-    {
-      title: "Future Technologies",
-
-      description:
-        "Research-driven innovation focused on scalable engineering, emerging technologies, and intelligent digital transformation.",
-    },
-  ];
-
   return (
     <main className="research-page">
       {/* HERO SECTION */}
@@ -67,15 +27,49 @@ export default function ResearchPage() {
       {/* RESEARCH GRID */}
 
       <section className="research-grid">
-        {researchAreas.map((item, index) => (
-          <div key={index} className="research-card">
-            <div className="research-number">0{index + 1}</div>
+        {researchAreas.map((item, index) => {
+          const Icon = item.icon;
 
-            <h3>{item.title}</h3>
+          return (
+            <article key={index} className="research-card">
+              {/* ICON */}
 
-            <p>{item.description}</p>
-          </div>
-        ))}
+              <div className="research-icon">
+                <Icon size={28} />
+              </div>
+
+              {/* NUMBER */}
+
+              <span className="research-number">0{index + 1}</span>
+
+              {/* TITLE */}
+
+              <h3>{item.title}</h3>
+
+              {/* DESCRIPTION */}
+
+              <p>{item.description}</p>
+            </article>
+          );
+        })}
+      </section>
+
+      {/* CTA */}
+
+      <section className="research-cta">
+        <div className="research-cta-content">
+          <h2>Engineering The Future Through Research & Innovation</h2>
+
+          <p>
+            We invest in advanced engineering, embedded intelligence, AI
+            systems, industrial automation, and future-ready technologies that
+            power next-generation innovation.
+          </p>
+
+          <Link href="/contact" className="research-cta-btn">
+            Collaborate With Us
+          </Link>
+        </div>
       </section>
     </main>
   );

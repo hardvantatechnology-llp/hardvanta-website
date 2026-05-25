@@ -4,44 +4,63 @@
 
 .contact-page {
 
-    width: 100%;
+    position:
+        relative;
 
-    min-height: 100vh;
+    width:
+        100%;
+
+    min-height:
+        100vh;
+
+    overflow:
+        hidden;
 
     background:
         radial-gradient(circle at top right,
             rgba(37, 99, 235, 0.08),
             transparent 35%),
+        radial-gradient(circle at bottom left,
+            rgba(15, 23, 42, 0.04),
+            transparent 30%),
         #F8FAFC;
 }
 
 /* =========================
-   POPUP OVERLAY
+   OVERLAY
 ========================= */
 
 .popup-overlay {
 
-    position: fixed;
+    position:
+        fixed;
 
-    inset: 0;
+    inset:
+        0;
 
-    z-index: 3000;
+    z-index:
+        3000;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
-    justify-content: center;
+    align-items:
+        center;
 
-    padding: 20px;
+    justify-content:
+        center;
+
+    padding:
+        24px;
 
     background:
-        rgba(15, 23, 42, 0.58);
+        rgba(15, 23, 42, 0.60);
 
     backdrop-filter:
-        blur(10px);
+        blur(14px);
 
     animation:
-        overlayFade 0.3s ease;
+        overlayFade 0.35s ease;
 }
 
 /* =========================
@@ -50,29 +69,70 @@
 
 .popup-box {
 
-    position: relative;
+    position:
+        relative;
 
-    width: 100%;
+    width:
+        100%;
 
-    max-width: 520px;
+    max-width:
+        540px;
 
     padding:
-        38px;
+        42px 40px;
 
     border-radius:
-        28px;
+        30px;
 
     background:
-        rgba(255, 255, 255, 0.97);
+        rgba(255, 255, 255, 0.98);
 
     border:
-        1px solid rgba(226, 232, 240, 0.85);
+        1px solid rgba(226, 232, 240, 0.9);
 
     box-shadow:
-        0 24px 60px rgba(15, 23, 42, 0.14);
+        0 30px 80px rgba(15, 23, 42, 0.14);
+
+    overflow:
+        hidden;
 
     animation:
         popupSlide 0.35s ease;
+}
+
+/* TOP GLOW */
+
+.popup-box::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        -120px;
+
+    right:
+        -120px;
+
+    width:
+        240px;
+
+    height:
+        240px;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(37, 99, 235, 0.08);
+
+    filter:
+        blur(40px);
+
+    pointer-events:
+        none;
 }
 
 /* =========================
@@ -81,19 +141,38 @@
 
 .close-btn {
 
-    position: absolute;
+    position:
+        absolute;
 
-    top: 16px;
-    right: 16px;
+    top:
+        18px;
 
-    width: 40px;
-    height: 40px;
+    right:
+        18px;
 
-    border: none;
+    width:
+        42px;
 
-    border-radius: 50%;
+    height:
+        42px;
 
-    cursor: pointer;
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        none;
+
+    border-radius:
+        50%;
+
+    cursor:
+        pointer;
 
     background:
         rgba(15, 23, 42, 0.05);
@@ -101,7 +180,8 @@
     color:
         #0F172A;
 
-    font-size: 16px;
+    font-size:
+        16px;
 
     transition:
         all 0.3s ease;
@@ -120,17 +200,22 @@
 }
 
 /* =========================
-   TEXT
+   TAG
 ========================= */
 
 .popup-tag {
 
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
+
+    justify-content:
+        center;
 
     padding:
-        8px 16px;
+        9px 18px;
 
     border-radius:
         999px;
@@ -141,39 +226,70 @@
     color:
         #2563EB;
 
-    font-size: 11px;
+    font-size:
+        11px;
 
-    font-weight: 700;
+    font-weight:
+        700;
 
-    letter-spacing: 3px;
+    letter-spacing:
+        3px;
 
-    margin-bottom: 20px;
+    text-transform:
+        uppercase;
+
+    margin-bottom:
+        22px;
 }
+
+/* =========================
+   TITLE
+========================= */
 
 .popup-box h2 {
 
     color:
         #0F172A;
 
-    font-size: 34px;
+    font-size:
+        clamp(2rem, 4vw, 2.5rem);
 
-    font-weight: 800;
+    font-weight:
+        800;
 
-    line-height: 1.18;
+    line-height:
+        1.12;
 
-    margin-bottom: 16px;
+    letter-spacing:
+        -0.03em;
+
+    margin-bottom:
+        16px;
+
+    max-width:
+        420px;
 }
+
+/* =========================
+   DESCRIPTION
+========================= */
 
 .popup-description {
 
     color:
         #64748B;
 
-    font-size: 15px;
+    font-size:
+        15px;
 
-    line-height: 1.8;
+    line-height:
+        1.85;
 
-    margin-bottom: 28px;
+    margin-bottom:
+        30px;
+
+    max-width:
+        460px;
 }
 
 /* =========================
@@ -182,28 +298,35 @@
 
 .contact-form {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    gap: 16px;
+    gap:
+        16px;
 }
+
+/* INPUTS */
 
 .contact-form input,
 .contact-form textarea {
 
-    width: 100%;
+    width:
+        100%;
 
     border:
         1px solid #E2E8F0;
 
     border-radius:
-        14px;
+        16px;
 
     padding:
-        15px 16px;
+        16px 18px;
 
-    outline: none;
+    outline:
+        none;
 
     background:
         #F8FAFC;
@@ -211,18 +334,28 @@
     color:
         #0F172A;
 
-    font-size: 14px;
+    font-size:
+        14px;
+
+    font-weight:
+        500;
 
     transition:
         all 0.3s ease;
 }
 
+/* TEXTAREA */
+
 .contact-form textarea {
 
-    resize: none;
+    resize:
+        none;
 
-    min-height: 120px;
+    min-height:
+        130px;
 }
+
+/* PLACEHOLDER */
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
@@ -230,6 +363,8 @@
     color:
         #94A3B8;
 }
+
+/* FOCUS */
 
 .contact-form input:focus,
 .contact-form textarea:focus {
@@ -250,17 +385,23 @@
 
 .submit-btn {
 
-    border: none;
+    width:
+        100%;
 
-    cursor: pointer;
+    border:
+        none;
 
-    margin-top: 6px;
+    cursor:
+        pointer;
+
+    margin-top:
+        6px;
 
     padding:
-        16px;
+        17px;
 
     border-radius:
-        14px;
+        16px;
 
     background:
         linear-gradient(135deg,
@@ -270,12 +411,17 @@
     color:
         white;
 
-    font-size: 14px;
+    font-size:
+        14px;
 
-    font-weight: 700;
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.3px;
 
     box-shadow:
-        0 14px 36px rgba(37, 99, 235, 0.20);
+        0 16px 38px rgba(37, 99, 235, 0.20);
 
     transition:
         all 0.3s ease;
@@ -287,7 +433,7 @@
         translateY(-2px);
 
     box-shadow:
-        0 18px 42px rgba(37, 99, 235, 0.25);
+        0 20px 48px rgba(37, 99, 235, 0.26);
 }
 
 /* =========================
@@ -298,15 +444,17 @@
 
     from {
 
-        opacity: 0;
+        opacity:
+            0;
 
         transform:
-            translateY(20px) scale(0.96);
+            translateY(24px) scale(0.96);
     }
 
     to {
 
-        opacity: 1;
+        opacity:
+            1;
 
         transform:
             translateY(0) scale(1);
@@ -316,11 +464,28 @@
 @keyframes overlayFade {
 
     from {
-        opacity: 0;
+
+        opacity:
+            0;
     }
 
     to {
-        opacity: 1;
+
+        opacity:
+            1;
+    }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+
+    .popup-box {
+
+        max-width:
+            500px;
     }
 }
 
@@ -330,30 +495,101 @@
 
 @media (max-width: 768px) {
 
-    .popup-box {
-
-        max-width: 100%;
+    .popup-overlay {
 
         padding:
-            30px 22px;
+            18px;
+    }
+
+    .popup-box {
+
+        max-width:
+            100%;
+
+        padding:
+            34px 24px;
 
         border-radius:
-            24px;
+            26px;
     }
 
     .popup-box h2 {
 
-        font-size: 28px;
+        font-size:
+            2rem;
+
+        line-height:
+            1.18;
     }
 
     .popup-description {
 
-        font-size: 14px;
+        font-size:
+            14px;
     }
 
     .contact-form input,
     .contact-form textarea {
 
-        font-size: 14px;
+        padding:
+            15px 16px;
+
+        font-size:
+            14px;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .popup-overlay {
+
+        padding:
+            14px;
+    }
+
+    .popup-box {
+
+        padding:
+            30px 20px;
+
+        border-radius:
+            22px;
+    }
+
+    .popup-tag {
+
+        font-size:
+            10px;
+
+        letter-spacing:
+            2px;
+
+        padding:
+            8px 15px;
+    }
+
+    .popup-box h2 {
+
+        font-size:
+            1.7rem;
+    }
+
+    .popup-description {
+
+        font-size:
+            13px;
+
+        line-height:
+            1.75;
+    }
+
+    .submit-btn {
+
+        padding:
+            15px;
     }
 }

@@ -22,19 +22,23 @@
 
     padding: 0 6%;
 
-    background:
-        rgba(255, 255, 255, 0.82);
+    /* CLEAN PURE WHITE */
 
-    backdrop-filter: blur(18px);
+    background: #FFFFFF;
 
     border-bottom:
-        1px solid rgba(226, 232, 240, 0.65);
+        1px solid rgba(226, 232, 240, 0.85);
+
+    box-shadow:
+        0 4px 22px rgba(15, 23, 42, 0.03);
 
     transition:
         all 0.3s ease;
 }
 
-/* LOGO */
+/* =========================
+   LOGO
+========================= */
 
 .logo-wrapper {
 
@@ -53,10 +57,11 @@
 
     border-radius: 14px;
 
-    object-fit: cover;
+    object-fit: contain;
 
-    box-shadow:
-        0 10px 25px rgba(15, 23, 42, 0.08);
+    background: white;
+
+    padding: 2px;
 
     transition:
         all 0.35s ease;
@@ -65,8 +70,10 @@
 .logo-wrapper:hover .logo-image {
 
     transform:
-        scale(1.04);
+        scale(1.03);
 }
+
+/* TEXT */
 
 .logo-text {
 
@@ -103,7 +110,9 @@
     letter-spacing: 3px;
 }
 
-/* NAVIGATION */
+/* =========================
+   DESKTOP NAV
+========================= */
 
 .desktop-nav {
 
@@ -137,6 +146,8 @@
     transition:
         all 0.3s ease;
 }
+
+/* UNDERLINE */
 
 .desktop-nav a::after {
 
@@ -173,7 +184,9 @@
     width: 100%;
 }
 
-/* DROPDOWN */
+/* =========================
+   DROPDOWN
+========================= */
 
 .dropdown {
 
@@ -203,6 +216,8 @@
         rotate(180deg);
 }
 
+/* MENU */
+
 .dropdown-menu {
 
     position: absolute;
@@ -214,19 +229,16 @@
 
     padding: 12px;
 
-    border-radius: 18px;
+    border-radius: 20px;
 
     background:
-        rgba(255, 255, 255, 0.96);
-
-    backdrop-filter:
-        blur(16px);
+        #FFFFFF;
 
     border:
-        1px solid rgba(226, 232, 240, 0.7);
+        1px solid rgba(226, 232, 240, 0.8);
 
     box-shadow:
-        0 20px 45px rgba(15, 23, 42, 0.10);
+        0 18px 45px rgba(15, 23, 42, 0.08);
 
     display: flex;
 
@@ -259,6 +271,8 @@
     pointer-events: auto;
 }
 
+/* MENU LINKS */
+
 .dropdown-menu a {
 
     padding:
@@ -266,6 +280,8 @@
 
     border-radius:
         12px;
+
+    font-size: 14px;
 
     transition:
         all 0.25s ease;
@@ -280,7 +296,9 @@
         #2563EB;
 }
 
-/* CTA BUTTON */
+/* =========================
+   CTA BUTTON
+========================= */
 
 .nav-btn {
 
@@ -308,7 +326,7 @@
     font-weight: 600;
 
     box-shadow:
-        0 12px 28px rgba(37, 99, 235, 0.18);
+        0 12px 28px rgba(37, 99, 235, 0.16);
 
     transition:
         all 0.3s ease;
@@ -323,7 +341,9 @@
         0 18px 38px rgba(37, 99, 235, 0.24);
 }
 
-/* MOBILE BUTTON */
+/* =========================
+   MOBILE BUTTON
+========================= */
 
 .mobile-menu-btn {
 
@@ -350,7 +370,15 @@
         all 0.3s ease;
 }
 
-/* MOBILE MENU */
+.mobile-menu-btn:hover {
+
+    background:
+        rgba(37, 99, 235, 0.14);
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
 
 .mobile-menu {
 
@@ -364,10 +392,13 @@
     padding: 24px;
 
     background:
-        rgba(255, 255, 255, 0.96);
+        rgba(255, 255, 255, 0.98);
 
     backdrop-filter:
         blur(18px);
+
+    border-top:
+        1px solid rgba(226, 232, 240, 0.7);
 
     display: flex;
 
@@ -396,6 +427,8 @@
         translateY(0);
 }
 
+/* MOBILE LINKS */
+
 .mobile-menu a {
 
     padding:
@@ -406,6 +439,9 @@
 
     background:
         #F8FAFC;
+
+    color:
+        #0F172A;
 
     font-size: 15px;
 
@@ -424,7 +460,27 @@
         #2563EB;
 }
 
-/* RESPONSIVE */
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+
+    .desktop-nav {
+
+        gap: 24px;
+    }
+
+    .nav-btn {
+
+        padding:
+            12px 20px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 768px) {
 
@@ -457,13 +513,54 @@
 
     .logo-text h2 {
 
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .logo-text span {
 
-        font-size: 8px;
+        font-size: 7px;
 
         letter-spacing: 2px;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+
+        padding: 0 4%;
+    }
+
+    .logo-wrapper {
+
+        gap: 10px;
+    }
+
+    .logo-text h2 {
+
+        font-size: 13px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .logo-text span {
+
+        font-size: 6px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .mobile-menu {
+
+        padding: 18px;
+    }
+
+    .mobile-menu a {
+
+        font-size: 14px;
     }
 }

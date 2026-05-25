@@ -13,38 +13,46 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Hardvanta Technologies LLP is a research-driven engineering company specializing in Embedded Systems, IoT Development, PCB Design, Firmware Development, Smart Automation, Artificial Intelligence, Industrial Automation, and Software Solutions.",
+    "Hardvanta Technologies LLP is a research-driven engineering company specializing in Embedded Systems, IoT Development, PCB Design, Firmware Engineering, Artificial Intelligence, Industrial Automation, and Smart Technology Solutions.",
 
   keywords: [
     "Hardvanta Technologies LLP",
-    "Hardvanta Technologies",
-    "Embedded Systems Company",
-    "IoT Company India",
+
+    "Embedded Systems",
+
     "IoT Development",
-    "PCB Design Company",
-    "Firmware Development",
-    "Industrial Automation",
-    "AI Solutions",
+
+    "PCB Design",
+
+    "Firmware Engineering",
+
     "Artificial Intelligence",
-    "Machine Learning",
-    "Embedded Hardware",
-    "Electronics Engineering",
-    "Research and Development",
-    "Engineering Company",
-    "Automation Solutions",
-    "Smart Automation",
-    "Software Development",
-    "Technology Company India",
-    "Greater Noida Startup",
+
+    "Industrial Automation",
+
+    "AI Solutions",
+
     "Industrial IoT",
-    "Smart Systems",
-    "Embedded Software",
-    "Product Prototyping",
+
+    "Electronics Engineering",
+
+    "Automation Systems",
+
+    "Technology Company India",
+
+    "Engineering Startup",
+
+    "Embedded Hardware",
+
+    "Smart Automation",
+
+    "Research and Development",
   ],
 
   authors: [
     {
       name: "Hardvanta Technologies LLP",
+
       url: "https://hardvantatechnologies.in",
     },
   ],
@@ -56,12 +64,14 @@ export const metadata: Metadata = {
   category: "Technology",
 
   alternates: {
-    canonical: "/",
+    canonical: "https://hardvantatechnologies.in",
   },
 
   icons: {
     icon: "/logo/logo.jpeg",
+
     shortcut: "/logo/logo.jpeg",
+
     apple: "/logo/logo.jpeg",
   },
 
@@ -69,7 +79,7 @@ export const metadata: Metadata = {
     title: "Hardvanta Technologies LLP",
 
     description:
-      "Engineering intelligent solutions through Embedded Systems, IoT, AI, Smart Automation, PCB Design, Firmware Development, and Industrial Technology.",
+      "Engineering intelligent systems through Embedded Systems, IoT, AI, PCB Design, Firmware Development, and Industrial Automation.",
 
     url: "https://hardvantatechnologies.in",
 
@@ -82,8 +92,11 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/logo/logo.jpeg",
+
         width: 1200,
+
         height: 630,
+
         alt: "Hardvanta Technologies LLP",
       },
     ],
@@ -95,25 +108,27 @@ export const metadata: Metadata = {
     title: "Hardvanta Technologies LLP",
 
     description:
-      "Research-driven engineering company focused on Embedded Systems, IoT, AI Solutions, Smart Automation, PCB Design, and Industrial Innovation.",
+      "Research-driven engineering company focused on Embedded Systems, IoT, AI Solutions, and Industrial Innovation.",
 
     images: ["/logo/logo.jpeg"],
   },
 
   robots: {
     index: true,
-    follow: true,
 
-    nocache: false,
+    follow: true,
 
     googleBot: {
       index: true,
+
       follow: true,
 
       noimageindex: false,
 
       "max-video-preview": -1,
+
       "max-image-preview": "large",
+
       "max-snippet": -1,
     },
   },
@@ -125,11 +140,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body>{children}</body>
     </html>
   );

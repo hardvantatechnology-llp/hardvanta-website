@@ -1,51 +1,9 @@
+import { industries } from "@/data/industries";
+
 export default function IndustriesPage() {
-  const industries = [
-    {
-      title: "Industrial Automation",
-
-      description:
-        "Advanced automation systems, intelligent process control, and smart industrial operations.",
-    },
-
-    {
-      title: "Smart Manufacturing",
-
-      description:
-        "Engineering modern manufacturing ecosystems with IoT integration and real-time monitoring.",
-    },
-
-    {
-      title: "IoT & Smart Devices",
-
-      description:
-        "Connected device ecosystems, sensor-based systems, and scalable IoT infrastructure.",
-    },
-
-    {
-      title: "Electronics Engineering",
-
-      description:
-        "Embedded electronics, PCB design, firmware engineering, and hardware integration solutions.",
-    },
-
-    {
-      title: "AI & Intelligent Systems",
-
-      description:
-        "Artificial Intelligence solutions, predictive systems, automation intelligence, and smart analytics.",
-    },
-
-    {
-      title: "Research & Innovation",
-
-      description:
-        "Research-driven engineering solutions focused on innovation, scalability, and future technologies.",
-    },
-  ];
-
   return (
     <main className="industries-page">
-      {/* HERO SECTION */}
+      {/* HERO */}
 
       <section className="industries-hero">
         <div className="industries-content">
@@ -64,18 +22,46 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* INDUSTRIES GRID */}
+      {/* GRID */}
 
       <section className="industries-grid">
-        {industries.map((industry, index) => (
-          <div key={index} className="industry-card">
-            <div className="industry-number">0{index + 1}</div>
+        {industries.map((industry, index) => {
+          const Icon = industry.icon;
 
-            <h3>{industry.title}</h3>
+          return (
+            <div key={index} className="industry-card">
+              {/* ICON */}
 
-            <p>{industry.description}</p>
-          </div>
-        ))}
+              <div className="industry-icon">
+                <Icon size={34} />
+              </div>
+
+              <span className="industry-number">0{index + 1}</span>
+
+              <h3>{industry.title}</h3>
+
+              <p>{industry.description}</p>
+            </div>
+          );
+        })}
+      </section>
+
+      {/* CTA SECTION */}
+
+      <section className="industries-cta">
+        <div className="industries-cta-content">
+          <h2>Ready To Build Intelligent Engineering Systems?</h2>
+
+          <p>
+            Partner with Hardvanta Technologies LLP to develop scalable
+            industrial solutions, intelligent systems, and next-generation
+            engineering products.
+          </p>
+
+          <a href="/contact" className="industries-cta-btn">
+            Schedule Consultation
+          </a>
+        </div>
       </section>
     </main>
   );
