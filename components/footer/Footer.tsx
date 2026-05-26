@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import Link from "next/link";
 
 import { Mail, MapPin, Globe, ArrowUpRight } from "lucide-react";
@@ -7,7 +6,7 @@ import { Mail, MapPin, Globe, ArrowUpRight } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="footer">
-      {/* BACKGROUND GLOW */}
+      {/* BACKGROUND */}
 
       <div className="footer-blur footer-blur-one"></div>
 
@@ -23,9 +22,10 @@ export default function Footer() {
             <Image
               src="/logo/logo.jpeg"
               alt="Hardvanta Technologies LLP"
-              width={58}
-              height={58}
+              width={64}
+              height={64}
               priority
+              quality={100}
               className="footer-logo"
             />
 
@@ -37,27 +37,21 @@ export default function Footer() {
           </Link>
 
           <p className="footer-description">
-            We help businesses build intelligent engineering systems through
-            Embedded Technologies, IoT Solutions, Artificial Intelligence,
-            Firmware Engineering, and Industrial Automation.
+            Hardvanta Technologies LLP is a research-driven engineering company
+            focused on Embedded Systems, Artificial Intelligence, Industrial
+            IoT, Firmware Engineering, PCB Design, and Industrial Automation
+            solutions for future-ready industries.
           </p>
 
-          {/* SOCIAL */}
-
-          <div className="footer-socials">
-            <a
-              href="https://www.linkedin.com/in/hardvanta-technologies-llp-3561a2407/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-social"
-            >
-              <span className="linkedin-badge">in</span>
-
-              <span>LinkedIn</span>
-
-              <ArrowUpRight size={15} />
-            </a>
-          </div>
+          <a
+            href="https://www.linkedin.com/company/hardvanta-technologies-llp/posts/?feedView=all"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-linkedin"
+          >
+            LinkedIn
+            <ArrowUpRight size={14} />
+          </a>
         </div>
 
         {/* SERVICES */}
@@ -71,11 +65,15 @@ export default function Footer() {
             </li>
 
             <li>
-              <Link href="/services">IoT Development</Link>
+              <Link href="/services">Industrial IoT</Link>
             </li>
 
             <li>
-              <Link href="/services">PCB Design</Link>
+              <Link href="/services">PCB Engineering</Link>
+            </li>
+
+            <li>
+              <Link href="/services">Firmware Development</Link>
             </li>
 
             <li>
@@ -95,7 +93,7 @@ export default function Footer() {
 
           <ul>
             <li>
-              <Link href="/about">About Us</Link>
+              <Link href="/about">About</Link>
             </li>
 
             <li>
@@ -126,13 +124,13 @@ export default function Footer() {
           <h4>Contact</h4>
 
           <div className="footer-contact-item">
-            <MapPin size={18} />
+            <MapPin size={17} />
 
             <p>Greater Noida, Uttar Pradesh, India</p>
           </div>
 
           <div className="footer-contact-item">
-            <Mail size={18} />
+            <Mail size={17} />
 
             <a href="mailto:info@hardvantatechnologies.in">
               info@hardvantatechnologies.in
@@ -140,7 +138,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-contact-item">
-            <Globe size={18} />
+            <Globe size={17} />
 
             <a
               href="https://hardvantatechnologies.in"
@@ -150,6 +148,11 @@ export default function Footer() {
               hardvantatechnologies.in
             </a>
           </div>
+
+          <Link href="/contact" className="footer-cta-btn">
+            Start a Project
+            <ArrowUpRight size={15} />
+          </Link>
         </div>
       </div>
 
@@ -157,6 +160,14 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <p>© 2026 Hardvanta Technologies LLP. All Rights Reserved.</p>
+
+        <div className="footer-bottom-links">
+          <Link href="/">Home</Link>
+
+          <Link href="/services">Services</Link>
+
+          <Link href="/contact">Contact</Link>
+        </div>
       </div>
     </footer>
   );

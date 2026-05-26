@@ -1,11 +1,10 @@
-import Link from "next/link";
-
+import Image from "next/image";
 import { researchAreas } from "@/data/research";
 
 export default function ResearchPage() {
   return (
     <main className="research-page">
-      {/* HERO SECTION */}
+      {/* HERO */}
 
       <section className="research-hero">
         <div className="research-content">
@@ -19,7 +18,7 @@ export default function ResearchPage() {
           <p>
             Hardvanta Technologies LLP focuses on intelligent engineering
             research, embedded systems, AI technologies, industrial automation,
-            and future-ready innovation.
+            and scalable future-ready innovation.
           </p>
         </div>
       </section>
@@ -28,48 +27,41 @@ export default function ResearchPage() {
 
       <section className="research-grid">
         {researchAreas.map((item, index) => {
-          const Icon = item.icon;
-
           return (
             <article key={index} className="research-card">
-              {/* ICON */}
+              {/* IMAGE */}
 
-              <div className="research-icon">
-                <Icon size={28} />
+              <div className="research-image-wrapper">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={700}
+                  height={500}
+                  priority={index < 2}
+                  className="research-image"
+                />
+
+                <div className="research-overlay"></div>
+
+                <span className="research-chip">HARDVANTA LABS</span>
               </div>
 
-              {/* NUMBER */}
+              {/* CONTENT */}
 
-              <span className="research-number">0{index + 1}</span>
+              <div className="research-body">
+                <h3>{item.title}</h3>
 
-              {/* TITLE */}
+                <p>{item.description}</p>
 
-              <h3>{item.title}</h3>
+                <div className="research-footer">
+                  <span>Research & Innovation</span>
 
-              {/* DESCRIPTION */}
-
-              <p>{item.description}</p>
+                  <div className="research-dot"></div>
+                </div>
+              </div>
             </article>
           );
         })}
-      </section>
-
-      {/* CTA */}
-
-      <section className="research-cta">
-        <div className="research-cta-content">
-          <h2>Engineering The Future Through Research & Innovation</h2>
-
-          <p>
-            We invest in advanced engineering, embedded intelligence, AI
-            systems, industrial automation, and future-ready technologies that
-            power next-generation innovation.
-          </p>
-
-          <Link href="/contact" className="research-cta-btn">
-            Collaborate With Us
-          </Link>
-        </div>
       </section>
     </main>
   );

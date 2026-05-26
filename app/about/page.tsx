@@ -7,7 +7,9 @@ import { ArrowUpRight, Cpu, Brain, Factory } from "lucide-react";
 export default function AboutPage() {
   return (
     <main className="about-page">
-      {/* HERO SECTION */}
+      {/* =========================================
+          HERO SECTION
+      ========================================= */}
 
       <section className="about-hero">
         <div className="about-hero-content">
@@ -15,19 +17,23 @@ export default function AboutPage() {
 
           <h1>
             Engineering
-            <span> Intelligent Systems</span> For Modern Industries
+            <span> Intelligent Systems</span>
+            <br />
+            For Modern Industries
           </h1>
 
           <p className="about-description">
             Hardvanta Technologies LLP is a research-driven engineering company
-            focused on Embedded Systems, IoT Development, Artificial
+            focused on Embedded Systems, Industrial IoT, Artificial
             Intelligence, Firmware Engineering, and Industrial Automation
-            solutions.
+            solutions for future-ready industries.
           </p>
         </div>
       </section>
 
-      {/* COMPANY SECTION */}
+      {/* =========================================
+          COMPANY SECTION
+      ========================================= */}
 
       <section className="company-section">
         {/* LEFT */}
@@ -40,13 +46,13 @@ export default function AboutPage() {
             <span> Through Engineering</span>
           </h2>
 
-          <p>
+          <p className="company-text">
             We build scalable intelligent systems, embedded technologies,
             automation platforms, and AI-powered engineering solutions for
-            future-ready industries.
+            modern enterprises and industrial ecosystems.
           </p>
 
-          <p>
+          <p className="company-text">
             Our mission is to combine advanced research, embedded engineering,
             automation, and intelligent software systems to create impactful
             industrial innovation.
@@ -86,7 +92,7 @@ export default function AboutPage() {
             <div className="stat-box">
               <h3>AI + IoT</h3>
 
-              <p>Innovation</p>
+              <p>Innovation Focus</p>
             </div>
 
             <div className="stat-box">
@@ -111,8 +117,8 @@ export default function AboutPage() {
             <Image
               src="/logo/logo.jpeg"
               alt="Hardvanta Technologies LLP"
-              width={600}
-              height={600}
+              width={650}
+              height={650}
               priority
               quality={100}
               className="about-company-image"

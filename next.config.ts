@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-
   reactStrictMode: true,
 
   poweredByHeader: false,
@@ -11,67 +10,77 @@ const nextConfig: NextConfig = {
   productionBrowserSourceMaps: false,
 
   images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
 
-    formats: [
-      "image/avif",
-      "image/webp"
+      {
+        protocol: "https",
+        hostname: "plus.unsplash.com",
+      },
     ],
 
-    qualities: [75, 90, 100],
+    formats: ["image/avif", "image/webp"],
 
-    minimumCacheTTL: 60
+    minimumCacheTTL: 60,
   },
 
   experimental: {
-
-    optimizePackageImports: [
-      "lucide-react",
-      "framer-motion"
-    ]
+    optimizePackageImports: ["lucide-react", "framer-motion"],
   },
 
   compiler: {
-
     removeConsole:
       process.env.NODE_ENV === "production"
+        ? {
+            exclude: ["error"],
+          }
+        : false,
   },
 
   async headers() {
-
     return [
       {
         source: "/(.*)",
 
         headers: [
-
           {
             key: "X-DNS-Prefetch-Control",
-            value: "on"
+            value: "on",
           },
 
           {
             key: "X-Frame-Options",
-            value: "SAMEORIGIN"
+            value: "SAMEORIGIN",
           },
 
           {
             key: "X-Content-Type-Options",
-            value: "nosniff"
+            value: "nosniff",
           },
 
           {
             key: "Referrer-Policy",
-            value: "strict-origin-when-cross-origin"
+            value: "strict-origin-when-cross-origin",
           },
 
           {
             key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=()"
-          }
-        ]
-      }
+            value:
+              "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+          },
+
+          {
+            key: "Strict-Transport-Security",
+            value:
+              "max-age=63072000; includeSubDomains; preload",
+          },
+        ],
+      },
     ];
-  }
+  },
 };
 
 export default nextConfig;
