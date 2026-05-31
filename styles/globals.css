@@ -1,12 +1,8 @@
-/* STREAMING_CHUNK: Initializing imports and variables */
+@import "tailwindcss";
+
 @import "./hero.css";
 @import "./team.css";
 @import "./contact.css";
-
-/* 1. Tailwind Directives (Always at the top) */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 /* 2. Layer structure for cleaner parsing */
 @layer base {
