@@ -29,13 +29,4 @@ export const teamMembers = [
       "https://www.linkedin.com/in/salman-ansari-0a8537361",
   },
 
-  {
-    name: "Devesh Chauhan",
-    role: "Chief Operating Officer",
-    image: "/team/Devesh-Chauhan.png",
-    description:
-      "Driving operations, execution excellence, open-source initiatives, and scalable engineering systems while ensuring seamless delivery across products, communities, and strategic technology programs.",
-    linkedin:
-      "https://www.linkedin.com/in/devesh-chauhan-6b5691308",
-  },
 ];

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { ArrowRight } from "lucide-react";
 
 export const teamMembers = [
   {
@@ -12,7 +13,6 @@ export const teamMembers = [
     linkedin:
       "https://www.linkedin.com/in/priya-saini-5b9159308/?skipRedirect=true",
   },
-
   {
     name: "Abhishek Patel",
     role: "Co-Founder",
@@ -21,7 +21,6 @@ export const teamMembers = [
       "Driving engineering excellence, scalable product development, and advanced technology research across multiple domains.",
     linkedin: "https://www.linkedin.com/in/abhishek-patel-49354a258",
   },
-
   {
     name: "Salman Ansari",
     role: "Chief Executive Officer",
@@ -30,89 +29,70 @@ export const teamMembers = [
       "Focused on strategic growth, operational leadership, industrial innovation, and intelligent business transformation.",
     linkedin: "https://www.linkedin.com/in/salman-ansari-0a8537361",
   },
-
-  {
-    name: "Devesh Chauhan",
-    role: "Chief Operating Officer",
-    image: "/team/Devesh-Chauhan.png",
-    description:
-      "Driving operations, execution excellence, open-source initiatives, and scalable engineering systems while ensuring seamless delivery across products, communities, and strategic technology programs.",
-    linkedin: "https://www.linkedin.com/in/devesh-chauhan-6b5691308",
-  },
 ];
 
 export default function TeamPreview() {
   return (
-    <>
-      <style>{`
-        .team-preview-section { padding: 80px 2%; background: #ffffff; width: 100%; }
-        .team-preview-header { max-width: 1400px; margin: 0 auto 60px; text-align: center; }
-        .section-tag { display: inline-flex; align-items: center; padding: 8px 18px; border-radius: 999px; background: #eff6ff; color: #2563eb; font-size: 10px; font-weight: 800; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; }
-        .team-preview-title { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; color: #0f172a; margin-bottom: 10px; }
-        
-        .team-preview-grid { 
-          display: grid; 
-          grid-template-columns: repeat(4, 1fr); 
-          gap: 20px; 
-          width: 100%;
-          max-width: 100%;
-          padding: 0 20px;
-        }
-        
-        .team-preview-card { 
-          display: flex; flex-direction: column; background: #ffffff; 
-          border: 1px solid #e2e8f0; border-radius: 24px; overflow: hidden;
-          transition: all 0.4s ease; height: 100%; min-height: 650px;
-        }
-        .team-preview-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
-        
-        .img-container { width: 100%; height: 350px; overflow: hidden; }
-        .card-img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: 0.5s ease; }
-        .team-preview-card:hover .card-img { transform: scale(1.05); }
-        
-        .content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
-        .role { font-size: 11px; font-weight: 800; color: #2563eb; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
-        .name { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 16px; }
-        .desc { color: #64748b; font-size: 0.95rem; line-height: 1.7; margin-bottom: 25px; }
-        
-        .link-wrapper { margin-top: auto; }
-        .linkedin-link { display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; border-radius: 50%; background: #f1f5f9; color: #0f172a; transition: 0.3s; }
-        .linkedin-link:hover { background: #0077b5; color: white; }
-
-        @media (max-width: 1200px) { .team-preview-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 640px) { .team-preview-grid { grid-template-columns: 1fr; } }
-      `}</style>
-
-      <section className="team-preview-section">
-        <div className="team-preview-header">
-          <p className="section-tag">Expert Team</p>
-          <h2 className="team-preview-title">Meet Our Leadership</h2>
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white w-full overflow-hidden">
+      <div className="max-w-[1400px] mx-auto w-full">
+        {}
+        <div className="flex flex-col items-center text-center mb-16 sm:mb-20">
+          <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-extrabold tracking-[0.2em] uppercase mb-4">
+            Expert Team
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight max-w-2xl">
+            Meet Our Leadership
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-slate-500 max-w-xl">
+            The visionaries and innovators driving the next generation of
+            intelligent engineering systems.
+          </p>
         </div>
 
-        <div className="team-preview-grid">
+        {}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full items-stretch">
+          {/* Member Cards mapping */}
           {teamMembers.map((member, index) => (
-            <article key={index} className="team-preview-card">
-              <div className="img-container">
+            <article
+              key={index}
+              className="group flex flex-col bg-white border border-slate-200/80 rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-2.5 hover:shadow-[0_24px_48px_-15px_rgba(0,0,0,0.08)] hover:border-blue-500/20 h-full min-h-[580px]"
+            >
+              {/* Image Container with scaling hover effect */}
+              <div className="w-full h-[320px] overflow-hidden relative bg-slate-100">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="card-img"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <div className="content">
-                <span className="role">{member.role}</span>
-                <h3 className="name">{member.name}</h3>
-                <p className="desc">{member.description}</p>
-                <div className="link-wrapper">
+
+              {/* Card Contents */}
+              <div className="p-8 flex-grow flex flex-col justify-between">
+                <div className="space-y-3">
+                  <span className="block text-xs font-bold text-blue-600 tracking-widest uppercase">
+                    {member.role}
+                  </span>
+                  <h3 className="text-xl font-extrabold text-slate-900 transition-colors duration-300 group-hover:text-blue-600">
+                    {member.name}
+                  </h3>
+                  <p className="text-sm text-slate-500 leading-relaxed pt-2">
+                    {member.description}
+                  </p>
+                </div>
+
+                {/* LinkedIn Link Box */}
+                <div className="pt-6">
                   <a
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="linkedin-link"
+                    className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-slate-50 text-slate-700 hover:bg-[#0077b5] hover:text-white transition-all duration-300 hover:scale-110 shadow-sm"
+                    aria-label={`${member.name} LinkedIn Profile`}
                   >
                     <svg
-                      width="20"
-                      height="20"
+                      className="w-5 h-5"
                       viewBox="0 0 24 24"
                       fill="currentColor"
                     >
@@ -123,8 +103,58 @@ export default function TeamPreview() {
               </div>
             </article>
           ))}
+
+          {}
+          <article className="group flex flex-col justify-between p-8 rounded-[2rem] border-2 border-dashed border-blue-100 bg-gradient-to-b from-blue-50/40 via-white to-white hover:border-blue-500/40 transition-all duration-500 hover:shadow-[0_24px_48px_-15px_rgba(37,99,235,0.06)] min-h-[580px] h-full text-left">
+            <div className="space-y-6">
+              {/* Decorative Tech Icon Grid */}
+              <div className="inline-flex p-3 rounded-2xl bg-blue-50/80 text-blue-600 border border-blue-100">
+                <svg
+                  className="w-6 h-6 animate-pulse"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+              </div>
+
+              <div className="space-y-3">
+                <span className="block text-xs font-bold text-blue-600 tracking-widest uppercase">
+                  Growth & Vision
+                </span>
+                <h3 className="text-2xl font-black text-slate-900 tracking-tight leading-snug">
+                  Want to meet the entire crew?
+                </h3>
+                <p className="text-sm text-slate-500 leading-relaxed">
+                  Our ecosystem is built by passionate engineers, hardware
+                  architects, and AI researchers working collaboratively to
+                  shape intelligent infrastructure.
+                </p>
+              </div>
+            </div>
+
+            {/* Premium Call to Action Button */}
+            <div className="pt-8">
+              <a
+                href="/team"
+                className="inline-flex items-center gap-3 w-full justify-center px-6 py-4 bg-slate-900 text-white font-bold text-sm rounded-2xl shadow-lg shadow-slate-950/10 hover:bg-blue-600 hover:shadow-blue-600/20 transition-all duration-300 group/btn"
+              >
+                <span>Visit Full Team</span>
+                <ArrowRight
+                  size={16}
+                  className="transition-transform duration-300 group-hover/btn:translate-x-1.5"
+                />
+              </a>
+            </div>
+          </article>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
