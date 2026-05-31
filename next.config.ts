@@ -9,7 +9,11 @@ const nextConfig: NextConfig = {
 
   productionBrowserSourceMaps: false,
 
+  trailingSlash: false,
+
   images: {
+    qualities: [75, 85, 100],
+
     remotePatterns: [
       {
         protocol: "https",
@@ -22,13 +26,32 @@ const nextConfig: NextConfig = {
       },
     ],
 
-    formats: ["image/avif", "image/webp"],
+    formats: [
+      "image/avif",
+      "image/webp",
+    ],
 
-    minimumCacheTTL: 60,
+    minimumCacheTTL:
+      60 * 60 * 24 * 30,
+
+    dangerouslyAllowSVG: true,
+
+    contentDispositionType:
+      "inline",
+
+    contentSecurityPolicy:
+      "default-src 'self'; script-src 'none'; sandbox;",
   },
 
   experimental: {
-    optimizePackageImports: ["lucide-react", "framer-motion"],
+    optimizeCss: true,
+
+    scrollRestoration: true,
+
+    optimizePackageImports: [
+      "lucide-react",
+      "framer-motion",
+    ],
   },
 
   compiler: {
@@ -47,35 +70,73 @@ const nextConfig: NextConfig = {
 
         headers: [
           {
-            key: "X-DNS-Prefetch-Control",
+            key:
+              "X-DNS-Prefetch-Control",
+
             value: "on",
           },
 
           {
-            key: "X-Frame-Options",
-            value: "SAMEORIGIN",
+            key:
+              "X-Frame-Options",
+
+            value:
+              "SAMEORIGIN",
           },
 
           {
-            key: "X-Content-Type-Options",
-            value: "nosniff",
+            key:
+              "X-Content-Type-Options",
+
+            value:
+              "nosniff",
           },
 
           {
-            key: "Referrer-Policy",
-            value: "strict-origin-when-cross-origin",
+            key:
+              "Referrer-Policy",
+
+            value:
+              "strict-origin-when-cross-origin",
           },
 
           {
-            key: "Permissions-Policy",
+            key:
+              "Permissions-Policy",
+
             value:
               "camera=(), microphone=(), geolocation=(), browsing-topics=()",
           },
 
           {
-            key: "Strict-Transport-Security",
+            key:
+              "Strict-Transport-Security",
+
             value:
               "max-age=63072000; includeSubDomains; preload",
+          },
+
+          {
+            key:
+              "Cross-Origin-Opener-Policy",
+
+            value:
+              "same-origin",
+          },
+
+          {
+            key:
+              "Cross-Origin-Resource-Policy",
+
+            value:
+              "same-origin",
+          },
+
+          {
+            key:
+              "Origin-Agent-Cluster",
+
+            value: "?1",
           },
         ],
       },

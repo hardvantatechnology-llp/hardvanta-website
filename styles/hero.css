@@ -1,612 +1,712 @@
-/* ==========================================
-   HARDVANTA HERO SECTION — FINAL PRO
-========================================== */
+/* ==========================================================================
+   ELITE HIGH-TECH METALLIC HUD HERO STYLES - Hardvanta Technologies LLP
+   ========================================================================== */
 
+:root {
+    --bg-dark: #07090e;
+    --text-light: #f8fafc;
+    --text-muted: #94a3b8;
+
+    /* Core Brand Colors Matched to the HV Logo */
+    --logo-blue: #1c5293;
+    /* Premium Metallic Blue */
+    --logo-blue-glow: #3b82f6;
+    /* Bright Tech Blue */
+    --logo-silver: #cbd5e1;
+    /* Metallic Silver */
+    --accent-cyan: #00f2fe;
+    /* High-Tech Cyan Flare */
+
+    /* Neon & Ambient Glow Variables */
+    --primary-glow: rgba(28, 82, 147, 0.35);
+    --secondary-glow: rgba(0, 242, 254, 0.2);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --glass-bg: rgba(10, 15, 26, 0.75);
+}
+
+/* Base resets & styles for context compatibility */
 .hero-section {
-
     position: relative;
-
+    width: 100%;
     min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-
-    padding:
-        105px 6% 65px;
-
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     overflow: hidden;
-
-    background:
-        radial-gradient(circle at top right,
-            rgba(37, 99, 235, 0.06),
-            transparent 30%),
-
-        radial-gradient(circle at bottom left,
-            rgba(15, 45, 92, 0.04),
-            transparent 28%),
-
-        #F8FAFC;
-}
-
-/* ==========================================
-   CONTAINER
-========================================== */
-
-.hero-container {
-
-    width: 100%;
-
-    max-width: 1240px;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr) minmax(360px, 450px);
-
-    align-items: center;
-
-    gap: 64px;
-}
-
-/* ==========================================
-   LEFT SIDE
-========================================== */
-
-.hero-left {
-
-    width: 100%;
-
-    max-width: 540px;
-
-    position: relative;
-
-    z-index: 2;
-}
-
-/* ==========================================
-   TAG
-========================================== */
-
-.hero-tag {
-
-    display: inline-flex;
-
+    display: flex;
     align-items: center;
     justify-content: center;
-
-    padding:
-        8px 18px;
-
-    margin-bottom: 18px;
-
-    border-radius: 999px;
-
-    background:
-        rgba(37, 99, 235, 0.08);
-
-    color:
-        #2563EB;
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    letter-spacing: 1.7px;
-
-    text-transform: uppercase;
+    padding: 80px 24px;
+    box-sizing: border-box;
 }
 
-/* ==========================================
-   HERO TITLE
-========================================== */
+/* --- BACKGROUND GRID, LASER SCAN & GLOW EFFECTS --- */
+
+.hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(to right, rgba(28, 82, 147, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(28, 82, 147, 0.06) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000 60%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000 60%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* High-tech sweeping horizontal laser scanner */
+.hero-grid-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--logo-blue-glow), transparent);
+    opacity: 0.8;
+    box-shadow: 0 0 20px var(--accent-cyan);
+    animation: laser-scanner 8s linear infinite;
+}
+
+.hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(140px);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.8;
+    mix-blend-mode: screen;
+}
+
+.hero-glow-one {
+    top: 10%;
+    left: 5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+    animation: float-slow 12s ease-in-out infinite alternate;
+}
+
+.hero-glow-two {
+    bottom: 5%;
+    right: 2%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--secondary-glow) 0%, transparent 70%);
+    animation: pulse-glow 7s ease-in-out infinite alternate;
+}
+
+/* --- MAIN CONTAINER LAYOUT --- */
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 80px;
+    align-items: center;
+    z-index: 10;
+}
+
+/* --- LEFT SIDE: CONTENT --- */
+
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 18px;
+    background: rgba(0, 242, 254, 0.05);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    border-radius: 100px;
+    color: var(--accent-cyan);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.15), inset 0 0 10px rgba(0, 242, 254, 0.1);
+    animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
 .hero-left h1 {
-
-    width: 100%;
-
-    max-width: 500px;
-
-    font-size:
-        clamp(2rem, 4.2vw, 4.7rem);
-
-    line-height: 0.92;
-
-    font-weight: 800;
-
-    letter-spacing: -3px;
-
-    color:
-        #0F172A;
-
-    margin-bottom: 18px;
-
-    word-break: normal;
-
-    overflow-wrap: normal;
+    font-size: clamp(2.8rem, 4.8vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    color: var(--text-light);
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-/* HIGHLIGHT */
 
 .hero-left h1 span {
-
-    color:
-        #16356B;
+    display: block;
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--logo-blue-glow) 50%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 30px rgba(0, 242, 254, 0.35));
 }
-
-/* ==========================================
-   DESCRIPTION
-========================================== */
 
 .hero-description {
-
-    max-width: 520px;
-
-    color:
-        #64748B;
-
-    font-size: 0.95rem;
-
-    line-height: 1.85;
-
-    margin-bottom: 34px;
+    font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+    line-height: 1.7;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 44px;
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ==========================================
-   BUTTONS
-========================================== */
-
 .hero-buttons {
-
     display: flex;
-
-    align-items: center;
-
     flex-wrap: wrap;
-
-    gap: 14px;
-
-    margin-bottom: 34px;
+    gap: 20px;
+    animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-primary-btn,
 .hero-secondary-btn {
-
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
-    min-width: 180px;
-
-    padding:
-        14px 24px;
-
-    border-radius: 14px;
-
-    text-decoration: none;
-
-    font-size: 12px;
-
+    padding: 16px 34px;
+    font-size: 15px;
     font-weight: 700;
-
-    transition:
-        all 0.3s ease;
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 0.5px;
 }
 
-/* PRIMARY BUTTON */
-
 .hero-primary-btn {
-
-    background:
-        linear-gradient(135deg,
-            #16356B,
-            #2563EB);
-
-    color: white;
-
-    box-shadow:
-        0 14px 30px rgba(37, 99, 235, 0.16);
+    background: linear-gradient(135deg, var(--logo-blue), var(--logo-blue-glow));
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(28, 82, 147, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .hero-primary-btn:hover {
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 20px 40px rgba(37, 99, 235, 0.22);
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 0 45px rgba(59, 130, 246, 0.65);
+    filter: brightness(1.15);
 }
 
-/* SECONDARY BUTTON */
-
 .hero-secondary-btn {
-
-    background: white;
-
-    color: #16356B;
-
-    border:
-        1px solid rgba(226, 232, 240, 0.9);
-
-    box-shadow:
-        0 6px 18px rgba(15, 23, 42, 0.04);
+    background: var(--glass-bg);
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .hero-secondary-btn:hover {
-
-    transform:
-        translateY(-3px);
-
-    border-color:
-        #2563EB;
-
-    color:
-        #2563EB;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-cyan);
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.25);
+    text-shadow: 0 0 8px var(--accent-cyan);
 }
 
-/* ==========================================
-   STATS
-========================================== */
+/* --- RIGHT SIDE: CRAZY ELITE ORBITAL HUD SYSTEM --- */
 
-.hero-stats {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 16px;
-}
-
-.hero-stat {
-
-    padding:
-        18px;
-
-    border-radius: 18px;
-
-    background:
-        rgba(255, 255, 255, 0.92);
-
-    border:
-        1px solid rgba(226, 232, 240, 0.7);
-
-    box-shadow:
-        0 8px 24px rgba(15, 23, 42, 0.04);
-
-    transition:
-        all 0.3s ease;
-}
-
-.hero-stat:hover {
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 14px 30px rgba(37, 99, 235, 0.08);
-}
-
-.hero-stat h3 {
-
-    color:
-        #16356B;
-
-    font-size: 18px;
-
-    font-weight: 800;
-
-    margin-bottom: 4px;
-}
-
-.hero-stat p {
-
-    color:
-        #64748B;
-
-    font-size: 11px;
-
-    line-height: 1.5;
-}
-
-/* ==========================================
-   RIGHT SIDE
-========================================== */
-
-.hero-right {
-
-    width: 100%;
-
+.hero-core {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
     display: flex;
-
+    align-items: center;
     justify-content: center;
-
-    align-items: center;
+    animation: fadeIn 1.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ==========================================
-   HERO CARD
-========================================== */
+/* Concentric Background Tech Telemetry Rings */
+.hero-core-ring {
+    position: absolute;
+    border: 1px dashed rgba(28, 82, 147, 0.2);
+    border-radius: 50%;
+    pointer-events: none;
+    transform-style: preserve-3d;
+}
 
-.hero-card {
+/* Animated active sonar sweeps emitting outward */
+.ring-1 {
+    width: 170px;
+    height: 170px;
+    border-style: solid;
+    border-color: rgba(28, 82, 147, 0.4);
+    animation: sonar-pulse 4s linear infinite;
+}
 
-    width: 100%;
+.ring-2 {
+    width: 280px;
+    height: 280px;
+    animation: sonar-pulse 6s linear infinite 1.5s;
+}
 
-    max-width: 440px;
+.ring-3 {
+    width: 390px;
+    height: 390px;
+    border-style: solid;
+    border-color: rgba(0, 242, 254, 0.15);
+    animation: sonar-pulse 8s linear infinite 3s;
+}
 
-    padding:
-        32px;
+.ring-4 {
+    width: 500px;
+    height: 500px;
+}
 
-    border-radius: 28px;
+/* Center Logo Chamber Core 
+  Features a flawless silver-hot metallic/light circular plate.
+  This allows the HV logo with a white background to blend in cleanly 
+  without ugly square boxes!
+*/
+.hero-core-logo {
+    position: relative;
+    width: 165px;
+    /* Bigger Core Presence */
+    height: 165px;
+    border-radius: 50%;
 
-    background:
-        rgba(255, 255, 255, 0.94);
-
-    backdrop-filter:
-        blur(18px);
-
-    border:
-        1px solid rgba(226, 232, 240, 0.8);
-
+    /* Silver Metallic Chamber that completely blends white backgrounds */
+    background: radial-gradient(circle, #ffffff 60%, var(--logo-silver) 100%);
+    border: 4px solid var(--logo-blue);
     box-shadow:
-        0 22px 55px rgba(15, 23, 42, 0.06);
-}
+        0 0 50px rgba(59, 130, 246, 0.5),
+        inset 0 0 25px rgba(0, 0, 0, 0.15);
 
-/* BADGE */
-
-.hero-card-badge {
-
-    display: inline-flex;
-
+    overflow: hidden;
+    z-index: 15;
+    display: flex;
     align-items: center;
-
-    padding:
-        7px 14px;
-
-    margin-bottom: 18px;
-
-    border-radius: 999px;
-
-    background:
-        rgba(37, 99, 235, 0.08);
-
-    color:
-        #2563EB;
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    letter-spacing: 1.2px;
+    justify-content: center;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* CARD TITLE */
-
-.hero-card h2 {
-
-    color:
-        #0F172A;
-
-    font-size:
-        clamp(1.5rem, 2vw, 1.95rem);
-
-    line-height: 1.22;
-
-    font-weight: 800;
-
-    margin-bottom: 16px;
+/* Tech Grid scanline inside logo */
+.hero-core-logo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg,
+            rgba(28, 82, 147, 0.05) 0px,
+            rgba(28, 82, 147, 0.05) 1px,
+            transparent 1px,
+            transparent 3px);
+    z-index: 2;
+    pointer-events: none;
 }
 
-/* CARD TEXT */
+.hero-core-image {
+    object-fit: contain;
+    width: 82% !important;
+    /* Elegant interior padding */
+    height: 82% !important;
+    margin: auto;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
-.hero-card p {
+    /* Elite Blending Trick: dissolves logo's white background into the silver gradient disc */
+    mix-blend-mode: multiply;
+    filter: contrast(1.15) brightness(1.05);
+}
 
-    color:
-        #64748B;
+/* Crazy Hover State on Central Chamber */
+.hero-core-logo:hover {
+    transform: scale(1.1) rotate(4deg);
+    border-color: var(--accent-cyan);
+    box-shadow:
+        0 0 65px rgba(0, 242, 254, 0.7),
+        inset 0 0 30px rgba(28, 82, 147, 0.3);
+}
 
+.hero-core-logo:hover .hero-core-image {
+    transform: scale(1.12);
+}
+
+/* Orbit Path Tracks & Rotation Containers */
+.orbit {
+    position: absolute;
+    border: 1.5px solid rgba(255, 255, 255, 0.04);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+/* Concentric orbit tracks with dynamic speeds matching brand colors */
+.orbit-1 {
+    width: 220px;
+    height: 220px;
+    border-color: rgba(0, 242, 254, 0.08);
+    animation: spin-clockwise 16s linear infinite;
+}
+
+.orbit-2 {
+    width: 295px;
+    height: 295px;
+    border-color: rgba(59, 130, 246, 0.08);
+    animation: spin-counter-clockwise 22s linear infinite;
+}
+
+.orbit-3 {
+    width: 370px;
+    height: 370px;
+    border-color: rgba(28, 82, 147, 0.1);
+    animation: spin-clockwise 28s linear infinite;
+}
+
+.orbit-4 {
+    width: 445px;
+    height: 445px;
+    border-color: rgba(0, 242, 254, 0.08);
+    animation: spin-counter-clockwise 34s linear infinite;
+}
+
+.orbit-5 {
+    width: 520px;
+    height: 520px;
+    border-color: rgba(59, 130, 246, 0.08);
+    animation: spin-clockwise 40s linear infinite;
+}
+
+.orbit-6 {
+    width: 595px;
+    height: 595px;
+    border-color: rgba(28, 82, 147, 0.1);
+    animation: spin-counter-clockwise 46s linear infinite;
+}
+
+/* Interactive Service Badge Nodes (Glassmorphism + Logo Blue Borders) */
+.service-node {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(10, 15, 26, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text-light);
+    padding: 8px 18px;
+    border-radius: 20px;
     font-size: 12px;
-
-    line-height: 1.8;
-
-    margin-bottom: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    pointer-events: auto;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* ==========================================
-   GRID
-========================================== */
-
-.hero-card-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 10px;
+/* Customized Neon Accents for Orbit Nodes */
+.orbit-1 .service-node {
+    border-left: 3px solid var(--accent-cyan);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
 }
 
-.hero-card-grid div {
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    padding:
-        13px 10px;
-
-    border-radius: 12px;
-
-    background:
-        rgba(248, 250, 252, 0.9);
-
-    border:
-        1px solid rgba(226, 232, 240, 0.7);
-
-    color:
-        #16356B;
-
-    font-size: 11px;
-
-    font-weight: 600;
-
-    transition:
-        all 0.3s ease;
+.orbit-2 .service-node {
+    border-left: 3px solid var(--logo-blue-glow);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
 }
 
-.hero-card-grid div:hover {
-
-    transform:
-        translateY(-2px);
-
-    background:
-        rgba(37, 99, 235, 0.08);
+.orbit-3 .service-node {
+    border-left: 3px solid var(--logo-silver);
+    box-shadow: 0 0 15px rgba(203, 213, 225, 0.15);
 }
 
-/* ==========================================
-   TABLET
-========================================== */
+.orbit-4 .service-node {
+    border-left: 3px solid var(--accent-cyan);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
+}
 
-@media (max-width: 1024px) {
+.orbit-5 .service-node {
+    border-left: 3px solid var(--logo-blue-glow);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
+}
 
+.orbit-6 .service-node {
+    border-left: 3px solid var(--logo-silver);
+    box-shadow: 0 0 15px rgba(203, 213, 225, 0.15);
+}
+
+/* Crazy Elite Node Hover FX */
+.service-node:hover {
+    background: var(--text-light);
+    color: var(--bg-dark);
+    border-color: var(--text-light);
+    transform: translate(-50%, -50%) scale(1.18);
+    box-shadow:
+        0 0 30px rgba(255, 255, 255, 0.45),
+        0 0 15px var(--logo-blue-glow);
+    font-weight: 800;
+}
+
+/* Counter-rotations to maintain perfectly upright orientation */
+.orbit-1 .service-node {
+    animation: counter-spin-clockwise 16s linear infinite;
+}
+
+.orbit-2 .service-node {
+    animation: counter-spin-counter-clockwise 22s linear infinite;
+}
+
+.orbit-3 .service-node {
+    animation: counter-spin-clockwise 28s linear infinite;
+}
+
+.orbit-4 .service-node {
+    animation: counter-spin-counter-clockwise 34s linear infinite;
+}
+
+.orbit-5 .service-node {
+    animation: counter-spin-clockwise 40s linear infinite;
+}
+
+.orbit-6 .service-node {
+    animation: counter-spin-counter-clockwise 46s linear infinite;
+}
+
+/* --- ELITE KEYFRAME ANIMATIONS --- */
+
+@keyframes laser-scanner {
+    0% {
+        top: -5%;
+    }
+
+    100% {
+        top: 105%;
+    }
+}
+
+@keyframes sonar-pulse {
+    0% {
+        transform: scale(0.6);
+        opacity: 0;
+        border-color: var(--logo-blue-glow);
+    }
+
+    30% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.35);
+        opacity: 0;
+        border-color: var(--accent-cyan);
+    }
+}
+
+@keyframes float-slow {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-30px) rotate(15deg);
+    }
+}
+
+@keyframes pulse-glow {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: scale(1.15);
+        opacity: 0.9;
+    }
+}
+
+@keyframes spin-clockwise {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes counter-spin-clockwise {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes spin-counter-clockwise {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes counter-spin-counter-clockwise {
+    from {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+
+@media (max-width: 1200px) {
     .hero-container {
-
         grid-template-columns: 1fr;
-
-        gap: 50px;
+        gap: 80px;
+        text-align: center;
     }
 
     .hero-left {
-
-        max-width: 100%;
-    }
-
-    .hero-left h1 {
-
-        max-width: 100%;
-
-        font-size:
-            clamp(2.2rem, 6vw, 4rem);
-
-        line-height: 0.96;
-
-        letter-spacing: -2px;
+        align-items: center;
+        text-align: center;
     }
 
     .hero-description {
-
-        max-width: 100%;
-    }
-}
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width: 768px) {
-
-    .hero-section {
-
-        min-height: auto;
-
-        padding:
-            90px 6% 48px;
-    }
-
-    .hero-container {
-
-        gap: 40px;
-    }
-
-    .hero-left h1 {
-
-        font-size:
-            clamp(1.9rem, 8vw, 2.8rem);
-
-        line-height: 1;
-
-        letter-spacing: -1.4px;
-    }
-
-    .hero-description {
-
-        font-size: 0.9rem;
-
-        line-height: 1.7;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .hero-buttons {
-
-        flex-direction: column;
-
-        align-items: stretch;
-    }
-
-    .hero-primary-btn,
-    .hero-secondary-btn {
-
-        width: 100%;
-    }
-
-    .hero-stats {
-
-        grid-template-columns: 1fr;
-    }
-
-    .hero-card {
-
-        max-width: 100%;
-
-        padding:
-            26px;
-    }
-
-    .hero-card-grid {
-
-        grid-template-columns: 1fr;
+        justify-content: center;
     }
 }
 
-/* ==========================================
-   SMALL MOBILE
-========================================== */
-
-@media (max-width: 480px) {
-
+@media (max-width: 650px) {
     .hero-section {
-
-        padding:
-            84px 5% 40px;
+        padding: 60px 16px;
     }
 
-    .hero-left h1 {
-
-        font-size: 2rem;
-
-        line-height: 1.02;
-
-        letter-spacing: -1px;
+    .hero-container {
+        gap: 50px;
     }
 
-    .hero-description {
-
-        font-size: 0.85rem;
+    /* Dynamically scale down the entire holographic Orbit system on smaller devices */
+    .hero-core {
+        width: 360px;
+        height: 360px;
     }
 
-    .hero-card {
-
-        padding:
-            22px;
-
-        border-radius: 22px;
+    .ring-1 {
+        width: 110px;
+        height: 110px;
     }
 
-    .hero-card h2 {
+    .ring-2 {
+        width: 180px;
+        height: 180px;
+    }
 
-        font-size: 1.3rem;
+    .ring-3 {
+        width: 250px;
+        height: 250px;
+    }
+
+    .ring-4 {
+        width: 320px;
+        height: 320px;
+    }
+
+    .hero-core-logo {
+        width: 115px;
+        /* Scaled down beautifully on mobile */
+        height: 115px;
+    }
+
+    .orbit-1 {
+        width: 135px;
+        height: 135px;
+    }
+
+    .orbit-2 {
+        width: 180px;
+        height: 180px;
+    }
+
+    .orbit-3 {
+        width: 225px;
+        height: 225px;
+    }
+
+    .orbit-4 {
+        width: 270px;
+        height: 270px;
+    }
+
+    .orbit-5 {
+        width: 315px;
+        height: 315px;
+    }
+
+    .orbit-6 {
+        width: 360px;
+        height: 360px;
+    }
+
+    .service-node {
+        padding: 5px 12px;
+        font-size: 10px;
     }
 }

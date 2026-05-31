@@ -1,6 +1,25 @@
 import type { Metadata } from "next";
+import { Plus_Jakarta_Sans, Orbitron, Syne } from "next/font/google";
 
 import "../styles/globals.css";
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hardvantatechnologies.in"),
@@ -8,7 +27,6 @@ export const metadata: Metadata = {
   title: {
     default:
       "Hardvanta Technologies LLP | Embedded Systems, IoT & AI Solutions",
-
     template: "%s | Hardvanta Technologies LLP",
   },
 
@@ -17,51 +35,32 @@ export const metadata: Metadata = {
 
   keywords: [
     "Hardvanta Technologies LLP",
-
     "Embedded Systems",
-
     "IoT Development",
-
     "PCB Design",
-
     "Firmware Engineering",
-
     "Artificial Intelligence",
-
     "Industrial Automation",
-
     "AI Solutions",
-
     "Industrial IoT",
-
     "Electronics Engineering",
-
     "Automation Systems",
-
     "Technology Company India",
-
     "Engineering Startup",
-
     "Embedded Hardware",
-
     "Smart Automation",
-
     "Research and Development",
   ],
 
   authors: [
     {
       name: "Hardvanta Technologies LLP",
-
       url: "https://hardvantatechnologies.in",
     },
   ],
 
   creator: "Hardvanta Technologies LLP",
-
   publisher: "Hardvanta Technologies LLP",
-
-  category: "Technology",
 
   alternates: {
     canonical: "https://hardvantatechnologies.in",
@@ -69,34 +68,23 @@ export const metadata: Metadata = {
 
   icons: {
     icon: "/logo/logo.jpeg",
-
     shortcut: "/logo/logo.jpeg",
-
     apple: "/logo/logo.jpeg",
   },
 
   openGraph: {
     title: "Hardvanta Technologies LLP",
-
     description:
       "Engineering intelligent systems through Embedded Systems, IoT, AI, PCB Design, Firmware Development, and Industrial Automation.",
-
     url: "https://hardvantatechnologies.in",
-
     siteName: "Hardvanta Technologies LLP",
-
     locale: "en_IN",
-
     type: "website",
-
     images: [
       {
         url: "/logo/logo.jpeg",
-
         width: 1200,
-
         height: 630,
-
         alt: "Hardvanta Technologies LLP",
       },
     ],
@@ -104,37 +92,15 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-
     title: "Hardvanta Technologies LLP",
-
     description:
       "Research-driven engineering company focused on Embedded Systems, IoT, AI Solutions, and Industrial Innovation.",
-
     images: ["/logo/logo.jpeg"],
   },
 
   robots: {
     index: true,
-
     follow: true,
-
-    googleBot: {
-      index: true,
-
-      follow: true,
-
-      noimageindex: false,
-
-      "max-video-preview": -1,
-
-      "max-image-preview": "large",
-
-      "max-snippet": -1,
-    },
-  },
-
-  verification: {
-    google: "google-site-verification-code",
   },
 };
 
@@ -144,7 +110,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${jakarta.variable} ${orbitron.variable} ${syne.variable}`}
+    >
       <body>{children}</body>
     </html>
   );
