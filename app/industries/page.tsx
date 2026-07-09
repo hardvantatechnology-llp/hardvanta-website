@@ -217,10 +217,11 @@ export default function IndustriesPage() {
           font-size: 16px;
           line-height: 1.65;
         }
+
         .grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 26px;
+          gap: 24px;
         }
         .card {
           background: #ffffff;
@@ -320,8 +321,11 @@ export default function IndustriesPage() {
           background: #2563eb;
           display: inline-block;
         }
+
         .foot-cta {
           margin-top: 52px;
+          padding-top: 28px;
+          border-top: 1px solid #e7ebf2;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -353,7 +357,7 @@ export default function IndustriesPage() {
           outline: 2px solid #2563eb;
           outline-offset: 3px;
         }
-        @media (max-width: 900px) {
+        @media (max-width: 920px) {
           .grid {
             grid-template-columns: repeat(2, 1fr);
           }
