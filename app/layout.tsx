@@ -1,3 +1,5 @@
+import OrganizationSchema from "@/components/seo/OrganizationSchema";
+
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Orbitron, Syne } from "next/font/google";
 
@@ -67,9 +69,9 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: "/logo/logo.jpeg",
-    shortcut: "/logo/logo.jpeg",
-    apple: "/logo/logo.jpeg",
+   icon: "/logo/hardvanta.png",
+   shortcut: "/logo/hardvanta.png",
+   apple: "/logo/hardvanta.png",
   },
 
   openGraph: {
@@ -82,7 +84,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logo/logo.jpeg",
+        url: "/logo/hardvanta.png",
         width: 1200,
         height: 630,
         alt: "Hardvanta Technologies LLP",
@@ -95,7 +97,7 @@ export const metadata: Metadata = {
     title: "Hardvanta Technologies LLP",
     description:
       "Research-driven engineering company focused on Embedded Systems, IoT, AI Solutions, and Industrial Innovation.",
-    images: ["/logo/logo.jpeg"],
+    images: ["/logo/hardvanta.png"],
   },
 
   robots: {
@@ -109,13 +111,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html
-      lang="en"
-      data-scroll-behavior="smooth"
-      className={`${jakarta.variable} ${orbitron.variable} ${syne.variable}`}
-    >
-      <body>{children}</body>
-    </html>
+ return (
+  <html
+    lang="en"
+    data-scroll-behavior="smooth"
+    className={`${jakarta.variable} ${orbitron.variable} ${syne.variable}`}
+  >
+    <head>
+      <OrganizationSchema />
+    </head>
+    <body>{children}</body>
+  </html>
   );
 }

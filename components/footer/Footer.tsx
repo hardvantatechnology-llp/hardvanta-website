@@ -25,7 +25,7 @@ export default function Footer() {
               <div className="p-3 bg-slate-950 rounded-xl border border-slate-800 flex items-center justify-center transition-all duration-500 group-hover:border-cyan-500/50 group-hover:shadow-[0_0_25px_rgba(34,211,238,0.15)] group-hover:scale-105">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/logo/logo.jpeg"
+                  src="/logo/hardvanta.png"
                   alt="Hardvanta Technologies LLP"
                   width={56}
                   height={56}

@@ -36,7 +36,7 @@ const Navbar = () => {
 
       <a href="#home" className="logo-wrapper">
         <Image
-          src="/logo/logo.jpeg"
+          src="/logo/hardvanta.png"
           alt="Hardvanta Technologies LLP"
           width={50}
           height={50}

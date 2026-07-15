@@ -48,12 +48,13 @@ export default function Hero() {
 
           <div className="hero-core-logo">
             <Image
-              src="/logo/logo.jpeg"
-              alt="Hardvanta Technologies LLP"
-              fill
-              priority
-              quality={100}
-              className="hero-core-image"
+             src="/logo/hardvanta.png"
+             alt="Hardvanta Technologies LLP"
+             fill
+             priority
+             quality={100}
+             sizes="(max-width: 768px) 200px, 320px"
+             className="hero-core-image"
             />
           </div>
 

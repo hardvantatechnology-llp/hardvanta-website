@@ -309,7 +309,7 @@
     pointer-events: none;
 }
 
-.hero-core-image {
+.hero-core-image{
     object-fit: contain;
     width: 82% !important;
     /* Elegant interior padding */
