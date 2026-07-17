@@ -2,8 +2,13 @@
 
 import { useEffect, useState } from "react";
 
+// Valid Indian mobile numbers: exactly 10 digits, starting with 6-9
+const INDIAN_PHONE_REGEX = /^[6-9]\d{9}$/;
+
 export default function ContactPage() {
   const [showPopup, setShowPopup] = useState(true);
+  const [phone, setPhone] = useState("");
+  const [phoneError, setPhoneError] = useState("");
 
   /* PREVENT BODY SCROLL */
 
@@ -14,6 +19,29 @@ export default function ContactPage() {
       document.body.style.overflow = "auto";
     };
   }, [showPopup]);
+
+  function handlePhoneChange(e: React.ChangeEvent<HTMLInputElement>) {
+    // Strip anything that isn't a digit, cap at 10 digits
+    const digitsOnly = e.target.value.replace(/\D/g, "").slice(0, 10);
+    setPhone(digitsOnly);
+
+    if (digitsOnly.length === 0) {
+      setPhoneError("");
+    } else if (digitsOnly.length < 10) {
+      setPhoneError("Phone number must be 10 digits");
+    } else if (!INDIAN_PHONE_REGEX.test(digitsOnly)) {
+      setPhoneError("Enter a valid Indian mobile number (must start with 6-9)");
+    } else {
+      setPhoneError("");
+    }
+  }
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    if (!INDIAN_PHONE_REGEX.test(phone)) {
+      e.preventDefault();
+      setPhoneError("Enter a valid 10-digit Indian mobile number");
+    }
+  }
 
   return (
     <main className="contact-page">
@@ -36,12 +64,23 @@ export default function ContactPage() {
               Research.
             </p>
 
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={handleSubmit}>
               <input type="text" placeholder="Your Name" />
 
               <input type="email" placeholder="Your Email" />
 
-              <input type="text" placeholder="Phone Number" />
+              <div className="phone-field">
+                <input
+                  type="tel"
+                  inputMode="numeric"
+                  maxLength={10}
+                  value={phone}
+                  onChange={handlePhoneChange}
+                  placeholder="10-digit mobile number"
+                  className={phoneError ? "input-error" : ""}
+                />
+                {phoneError && <span className="field-error">{phoneError}</span>}
+              </div>
 
               <input type="text" placeholder="Subject" />
 
@@ -165,6 +204,27 @@ export default function ContactPage() {
         .contact-form textarea {
           resize: vertical;
           min-height: 100px;
+        }
+
+        .phone-field {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        .contact-form input.input-error {
+          border-color: #dc2626;
+        }
+
+        .contact-form input.input-error:focus {
+          border-color: #dc2626;
+          box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+        }
+
+        .field-error {
+          font-size: 12px;
+          font-weight: 600;
+          color: #dc2626;
         }
 
         .submit-btn {
