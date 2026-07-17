@@ -38,8 +38,8 @@ const Navbar = () => {
         <Image
           src="/logo/hardvanta.png"
           alt="Hardvanta Technologies LLP"
-          width={50}
-          height={50}
+          width={36}
+          height={36}
           priority
           className="logo-image"
         />
